@@ -35,13 +35,20 @@
 
     grid.innerHTML = REPORTERS.map((r) => {
       const storyCount = countStoriesByReporter(r.id);
+      const avatarHtml = r.image
+        ? `<img
+              class="reporter-card-portrait"
+              src="${escapeHtml(r.image)}"
+              alt="Portrait of ${escapeHtml(r.name)}"
+            />`
+        : `<div
+              class="reporter-card-avatar"
+              style="background-color: ${escapeHtml(r.avatarColor)};"
+            >${escapeHtml(r.avatar)}</div>`;
       return `
         <div class="reporter-card">
           <div class="reporter-card-top">
-            <div
-              class="reporter-card-avatar"
-              style="background-color: ${escapeHtml(r.avatarColor)};"
-            >${escapeHtml(r.avatar)}</div>
+            ${avatarHtml}
             <div>
               <div class="reporter-card-name">${escapeHtml(r.name)}</div>
               <div class="reporter-card-title">${escapeHtml(r.title)}</div>

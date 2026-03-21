@@ -28,7 +28,7 @@
   function setCurrentDate() {
     const el = document.getElementById("current-date");
     if (!el) return;
-    // Use Ardia Prime date format
+    // Use Ardia date format
     const days = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh"];
     const months = [
       "Frost Month", "Thaw Month", "Planting Month", "Growing Month",

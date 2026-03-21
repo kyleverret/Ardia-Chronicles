@@ -832,6 +832,17 @@ a:hover {
   flex-shrink: 0;
 }
 
+.reporter-card-portrait {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border: 2px solid #3a1a1a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
 .reporter-card-name {
   font-family: var(--font-display);
   font-size: 1.15rem;

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Ardia Prime Chronicle — News from Across the Realm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date" id="current-date"></div>
+      <div class="masthead-edition">Morning Edition · Year 847 AP</div>
+    </div>
+    <div class="masthead-title">
+      <div class="masthead-ornament">✦ ✦ ✦</div>
+      <h1 class="paper-name">The Ardia Prime Chronicle</h1>
+      <p class="paper-tagline">
+        <em>"Truth Binds Stronger Than Magic"</em>
+      </p>
+      <div class="masthead-ornament">✦ ✦ ✦</div>
+    </div>
+    <nav class="masthead-nav">
+      <a href="#" class="nav-link active" data-filter="all">All News</a>
+      <a href="#" class="nav-link" data-filter="politics">Politics</a>
+      <a href="#" class="nav-link" data-filter="conflict">Conflict</a>
+      <a href="#" class="nav-link" data-filter="culture">Culture</a>
+      <a href="#" class="nav-link" data-filter="science">Science &amp; Magic</a>
+      <a href="#" class="nav-link" data-filter="investigation">Investigation</a>
+      <a href="#" class="nav-link" data-filter="sports">Sports</a>
+      <a href="#" class="nav-link" data-filter="crime">Crime</a>
+      <a href="#" class="nav-link" data-filter="economy">Economy</a>
+      <a href="#" class="nav-link" data-filter="environment">Environment</a>
+      <a href="#" class="nav-link" data-filter="technology">Technology</a>
+      <a href="reporters.html" class="nav-link">Our Reporters</a>
+    </nav>
+  </header>
+
+  <!-- BREAKING NEWS TICKER -->
+  <div class="ticker-container">
+    <span class="ticker-label">BREAKING</span>
+    <div class="ticker-track">
+      <span class="ticker-item">Shadow Legion consolidates breach at Ironkeep ·</span>
+      <span class="ticker-item">Crystal ore prices surge 28% on Exchange ·</span>
+      <span class="ticker-item">Regent Tiberius resignation: Council in emergency session ·</span>
+      <span class="ticker-item">Arcane storm over the Arcane Sea grows in intensity ·</span>
+      <span class="ticker-item">Team Emberveil wins Dragonrider Championship ·</span>
+      <span class="ticker-item">Runescript Series C sells out in capital within hours ·</span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- FEATURED STORIES SECTION -->
+    <section class="featured-section" id="featured-section">
+      <div class="section-header">
+        <h2 class="section-title">Top Stories</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="featured-grid" id="featured-grid">
+        <!-- Featured stories injected by app.js -->
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="content-divider">
+      <span>⚜</span>
+      <span>Today's Dispatches from Across Ardia Prime</span>
+      <span>⚜</span>
+    </div>
+
+    <!-- ALL STORIES GRID -->
+    <section class="stories-section" id="stories-section">
+      <div class="stories-grid" id="stories-grid">
+        <!-- All stories injected by app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- REPORTERS SIDEBAR (visible on wider screens) -->
+  <aside class="reporters-sidebar" id="reporters-sidebar">
+    <div class="sidebar-header">
+      <h3>Our Reporters</h3>
+    </div>
+    <div class="reporters-list" id="reporters-sidebar-list">
+      <!-- Reporters injected by app.js -->
+    </div>
+    <a href="reporters.html" class="sidebar-see-all">View All Reporters &rarr;</a>
+  </aside>
+
+  <!-- STORY MODAL OVERLAY -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close story">&times;</button>
+      <article class="modal-article" id="modal-article">
+        <!-- Story content injected here -->
+      </article>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-masthead">
+        <div class="footer-ornament">✦ ✦ ✦</div>
+        <h2 class="footer-title">The Ardia Prime Chronicle</h2>
+        <p class="footer-tagline"><em>"Truth Binds Stronger Than Magic"</em></p>
+        <div class="footer-ornament">✦ ✦ ✦</div>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Publication</h4>
+          <p>Founded Year 701 AP</p>
+          <p>Praxis, Ardia Prime</p>
+          <p>Daily Morning &amp; Evening Editions</p>
+        </div>
+        <div class="footer-col">
+          <h4>Sections</h4>
+          <p><a href="#">Politics</a></p>
+          <p><a href="#">Conflict &amp; Military</a></p>
+          <p><a href="#">Culture &amp; Arts</a></p>
+          <p><a href="#">Science &amp; Magic</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <p><a href="#">Economy</a></p>
+          <p><a href="#">Sports &amp; Tournaments</a></p>
+          <p><a href="#">Crime &amp; Justice</a></p>
+          <p><a href="reporters.html">Our Reporters</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>The Chronicle</h4>
+          <p><a href="#">About Us</a></p>
+          <p><a href="#">Editorial Standards</a></p>
+          <p><a href="#">Submit a Tip</a></p>
+          <p><a href="#">Subscriber Services</a></p>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>© Year 847 AP, The Ardia Prime Chronicle. All rights reserved. Reproduction without permission of the Publisher is prohibited under the Grand Council Press Act of Year 712 AP. The Chronicle is an independent publication and accepts no control by the Grand Council, the High Regent's Office, or any guild, faction, or magical institution.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

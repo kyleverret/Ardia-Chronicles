@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0010;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#1a0020;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a0808;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="fireGrad" cx="50%" cy="100%" r="60%">
+      <stop offset="0%" style="stop-color:#ff6a00;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#ff2200;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ff0000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#skyGrad)"/>
+  <!-- Red moon -->
+  <circle cx="120" cy="80" r="45" fill="#8b0000" opacity="0.9"/>
+  <circle cx="110" cy="70" r="15" fill="#6b0000" opacity="0.5"/>
+  <!-- Smoke clouds -->
+  <ellipse cx="200" cy="120" rx="80" ry="30" fill="#1a1a1a" opacity="0.7"/>
+  <ellipse cx="350" cy="100" rx="100" ry="35" fill="#1a1a1a" opacity="0.6"/>
+  <ellipse cx="600" cy="110" rx="120" ry="40" fill="#1a1a1a" opacity="0.7"/>
+  <!-- Fire glow on ground -->
+  <rect x="0" y="300" width="800" height="150" fill="url(#fireGrad)"/>
+  <!-- City wall (broken) -->
+  <rect x="0" y="200" width="800" height="250" fill="#1a0808"/>
+  <!-- Wall battlements -->
+  <rect x="0" y="190" width="800" height="30" fill="#2a1010"/>
+  <rect x="50" y="170" width="30" height="30" fill="#2a1010"/>
+  <rect x="120" y="170" width="30" height="30" fill="#2a1010"/>
+  <rect x="190" y="170" width="30" height="30" fill="#2a1010"/>
+  <!-- Broken section -->
+  <polygon points="280,170 350,130 380,200 320,200" fill="#3a0808"/>
+  <rect x="380" y="170" width="30" height="30" fill="#2a1010"/>
+  <rect x="450" y="170" width="30" height="30" fill="#2a1010"/>
+  <rect x="520" y="170" width="30" height="30" fill="#2a1010"/>
+  <rect x="590" y="170" width="30" height="30" fill="#2a1010"/>
+  <rect x="660" y="170" width="30" height="30" fill="#2a1010"/>
+  <rect x="730" y="170" width="30" height="30" fill="#2a1010"/>
+  <!-- Fire bursts through breach -->
+  <polygon points="300,200 330,130 360,200" fill="#ff4400" opacity="0.8"/>
+  <polygon points="320,200 350,150 380,200" fill="#ff6600" opacity="0.7"/>
+  <!-- Shadow Legion army (silhouettes) -->
+  <rect x="50" y="300" width="8" height="30" fill="#050005"/>
+  <rect x="70" y="295" width="8" height="35" fill="#050005"/>
+  <rect x="90" y="298" width="8" height="32" fill="#050005"/>
+  <rect x="110" y="300" width="8" height="30" fill="#050005"/>
+  <rect x="130" y="295" width="8" height="35" fill="#050005"/>
+  <rect x="150" y="300" width="8" height="30" fill="#050005"/>
+  <rect x="170" y="298" width="8" height="32" fill="#050005"/>
+  <rect x="450" y="300" width="8" height="30" fill="#050005"/>
+  <rect x="470" y="295" width="8" height="35" fill="#050005"/>
+  <rect x="490" y="298" width="8" height="32" fill="#050005"/>
+  <rect x="510" y="300" width="8" height="30" fill="#050005"/>
+  <rect x="530" y="295" width="8" height="35" fill="#050005"/>
+  <rect x="550" y="300" width="8" height="30" fill="#050005"/>
+  <rect x="570" y="298" width="8" height="32" fill="#050005"/>
+  <rect x="590" y="300" width="8" height="30" fill="#050005"/>
+  <!-- Spear tips glinting -->
+  <line x1="54" y1="300" x2="57" y2="280" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="74" y1="295" x2="77" y2="275" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="94" y1="298" x2="97" y2="278" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="454" y1="300" x2="457" y2="280" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="474" y1="295" x2="477" y2="275" stroke="#aaa" stroke-width="1.5"/>
+  <!-- Text overlay -->
+  <rect x="0" y="390" width="800" height="60" fill="black" opacity="0.7"/>
+  <text x="400" y="420" text-anchor="middle" font-size="16" fill="#ff6a00" font-family="Georgia, serif" font-style="italic">Shadow Legion Forces Storm the Northern Wall at Ironkeep</text>
+</svg>

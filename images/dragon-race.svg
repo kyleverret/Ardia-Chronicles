@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="skyRace" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a3a;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#1a1a6a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a1a6a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#skyRace)"/>
+  <!-- Stars/crowd lights -->
+  <circle cx="100" cy="50" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="200" cy="30" r="1" fill="white" opacity="0.5"/>
+  <circle cx="400" cy="20" r="2" fill="#ffdd00" opacity="0.8"/>
+  <circle cx="600" cy="45" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="700" cy="25" r="1" fill="white" opacity="0.5"/>
+  <!-- Clouds -->
+  <ellipse cx="150" cy="120" rx="70" ry="25" fill="white" opacity="0.1"/>
+  <ellipse cx="600" cy="100" rx="90" ry="30" fill="white" opacity="0.1"/>
+  <!-- Main dragon (lead) - red -->
+  <polygon points="300,180 200,200 180,220 220,215 200,240 240,225 280,240 300,220 340,210 320,190" fill="#cc2200"/>
+  <polygon points="300,180 310,150 320,180" fill="#cc2200"/>
+  <!-- Dragon wings -->
+  <polygon points="250,195 180,150 220,195" fill="#aa1100" opacity="0.9"/>
+  <polygon points="310,190 380,145 350,195" fill="#aa1100" opacity="0.9"/>
+  <!-- Dragon head -->
+  <ellipse cx="310" cy="185" rx="20" ry="12" fill="#cc2200"/>
+  <circle cx="320" cy="180" r="4" fill="#ff6600"/>
+  <polygon points="325,188 340,183 328,195" fill="#aa1100"/>
+  <!-- Fire breath -->
+  <polygon points="335,185 400,178 350,195" fill="#ff8800" opacity="0.9"/>
+  <polygon points="340,183 420,175 360,192" fill="#ffaa00" opacity="0.6"/>
+  <!-- Rider silhouette -->
+  <ellipse cx="285" cy="183" rx="10" ry="7" fill="#111"/>
+  <rect x="280" y="176" width="10" height="12" fill="#111"/>
+  <!-- Second dragon - blue (chasing) -->
+  <polygon points="530,220 430,235 415,250 455,247 435,268 475,255 515,268 535,248 570,238 550,225" fill="#1a22cc"/>
+  <polygon points="530,220 540,195 550,220" fill="#1a22cc"/>
+  <!-- Blue dragon wings -->
+  <polygon points="480,232 415,192 450,232" fill="#1122aa" opacity="0.9"/>
+  <polygon points="540,228 605,188 575,230" fill="#1122aa" opacity="0.9"/>
+  <!-- Blue dragon head -->
+  <ellipse cx="545" cy="223" rx="20" ry="12" fill="#1a22cc"/>
+  <circle cx="558" cy="218" r="4" fill="#44aaff"/>
+  <!-- Blue rider -->
+  <ellipse cx="520" cy="220" rx="10" ry="7" fill="#111"/>
+  <rect x="515" y="213" width="10" height="12" fill="#111"/>
+  <!-- Speed trails -->
+  <line x1="180" y1="210" x2="100" y2="215" stroke="#cc2200" stroke-width="2" opacity="0.4"/>
+  <line x1="182" y1="220" x2="90" y2="225" stroke="#cc2200" stroke-width="1.5" opacity="0.3"/>
+  <line x1="415" y1="245" x2="330" y2="250" stroke="#1a22cc" stroke-width="2" opacity="0.4"/>
+  <!-- Arena banners bottom -->
+  <rect x="0" y="350" width="800" height="100" fill="#0d0a20"/>
+  <rect x="0" y="348" width="800" height="8" fill="#c9a227"/>
+  <!-- Crowd silhouettes -->
+  <ellipse cx="80" cy="385" rx="20" ry="12" fill="#050510"/>
+  <ellipse cx="160" cy="380" rx="20" ry="12" fill="#050510"/>
+  <ellipse cx="240" cy="385" rx="20" ry="12" fill="#050510"/>
+  <ellipse cx="400" cy="375" rx="25" ry="15" fill="#050510"/>
+  <ellipse cx="560" cy="382" rx="20" ry="12" fill="#050510"/>
+  <ellipse cx="640" cy="378" rx="20" ry="12" fill="#050510"/>
+  <ellipse cx="720" cy="383" rx="20" ry="12" fill="#050510"/>
+  <!-- Text overlay -->
+  <rect x="0" y="410" width="800" height="40" fill="black" opacity="0.7"/>
+  <text x="400" y="433" text-anchor="middle" font-size="15" fill="#ffdd00" font-family="Georgia, serif" font-style="italic">Dragonrider Championships: Team Emberveil Takes Stunning Victory</text>
+</svg>

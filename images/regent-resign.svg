@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="throneRoom" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0a0515;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#throneRoom)"/>
+  <!-- Throne room pillars -->
+  <rect x="50" y="0" width="40" height="450" fill="#15092a"/>
+  <rect x="710" y="0" width="40" height="450" fill="#15092a"/>
+  <rect x="150" y="0" width="30" height="450" fill="#15092a"/>
+  <rect x="620" y="0" width="30" height="450" fill="#15092a"/>
+  <!-- Royal banner - torn -->
+  <rect x="200" y="0" width="60" height="120" fill="#6a0000"/>
+  <polygon points="200,120 230,100 260,120" fill="#6a0000"/>
+  <text x="220" y="70" font-size="22" fill="#c9a227">⚜</text>
+  <!-- Torn banner right -->
+  <rect x="540" y="0" width="60" height="120" fill="#6a0000"/>
+  <polygon points="540,120 570,95 600,120" fill="#6a0000"/>
+  <text x="557" y="70" font-size="22" fill="#c9a227">⚜</text>
+  <!-- Throne (empty/overturned suggestion) -->
+  <rect x="340" y="220" width="120" height="100" fill="#2a1540" stroke="#c9a227" stroke-width="2"/>
+  <rect x="330" y="200" width="140" height="25" fill="#3a1a50" stroke="#c9a227" stroke-width="1.5"/>
+  <rect x="335" y="185" width="130" height="20" fill="#c9a227" opacity="0.6" rx="3"/>
+  <!-- Crown fallen on floor -->
+  <ellipse cx="400" cy="350" rx="35" ry="15" fill="#c9a227" opacity="0.8"/>
+  <polygon points="370,350 375,335 385,350" fill="#c9a227" opacity="0.8"/>
+  <polygon points="390,350 395,328 405,350" fill="#c9a227" opacity="0.8"/>
+  <polygon points="415,350 418,335 430,350" fill="#c9a227" opacity="0.8"/>
+  <circle cx="396" cy="333" r="5" fill="#ff0000" opacity="0.9"/>
+  <!-- Falling/dramatic figure - regent stepping down -->
+  <ellipse cx="310" cy="330" rx="20" ry="8" fill="#1a0535"/>
+  <rect x="297" y="270" width="26" height="65" fill="#1a0535"/>
+  <circle cx="310" cy="262" r="18" fill="#1a0535"/>
+  <!-- Dramatic pointing guards -->
+  <ellipse cx="180" cy="345" rx="18" ry="8" fill="#0a0020"/>
+  <rect x="169" y="290" width="22" height="60" fill="#0a0020"/>
+  <circle cx="180" cy="283" r="15" fill="#0a0020"/>
+  <!-- Guard spear -->
+  <line x1="185" y1="295" x2="230" y2="260" stroke="#888" stroke-width="2.5"/>
+  <ellipse cx="500" cy="345" rx="18" ry="8" fill="#0a0020"/>
+  <rect x="489" y="290" width="22" height="60" fill="#0a0020"/>
+  <circle cx="500" cy="283" r="15" fill="#0a0020"/>
+  <!-- Red carpet (partially rolled up - symbolic) -->
+  <rect x="0" y="380" width="380" height="25" fill="#4a0000" opacity="0.8"/>
+  <ellipse cx="385" cy="392" rx="12" ry="12" fill="#4a0000" opacity="0.8"/>
+  <!-- Scattered papers - documents -->
+  <rect x="420" y="300" width="50" height="35" fill="#e8d5a0" rx="2" transform="rotate(-15 420 300)"/>
+  <rect x="450" y="310" width="40" height="30" fill="#fffde8" rx="2" transform="rotate(10 450 310)"/>
+  <!-- Text overlay -->
+  <rect x="0" y="405" width="800" height="45" fill="black" opacity="0.7"/>
+  <text x="400" y="430" text-anchor="middle" font-size="14" fill="#c9a227" font-family="Georgia, serif" font-style="italic">High Regent Tiberius Announces Shock Resignation Amid Corruption Allegations</text>
+</svg>

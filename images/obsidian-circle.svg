@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <radialGradient id="secretGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#330000;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="#030305"/>
+  <!-- Shadows and mystery -->
+  <ellipse cx="400" cy="225" rx="350" ry="200" fill="url(#secretGlow)"/>
+  <!-- Stone floor -->
+  <rect x="0" y="300" width="800" height="150" fill="#0a0a0a"/>
+  <line x1="0" y1="300" x2="800" y2="300" stroke="#1a1a1a" stroke-width="1"/>
+  <!-- Ritual circle on floor -->
+  <circle cx="400" cy="280" r="150" fill="none" stroke="#8b0000" stroke-width="2"/>
+  <circle cx="400" cy="280" r="120" fill="none" stroke="#8b0000" stroke-width="1" stroke-dasharray="10,5"/>
+  <!-- Pentagram lines -->
+  <polygon points="400,140 445,270 300,180 500,180 355,270" fill="none" stroke="#8b0000" stroke-width="1.5" opacity="0.8"/>
+  <!-- Candles at pentagram points -->
+  <rect x="397" y="128" width="6" height="20" fill="#cc9900"/>
+  <ellipse cx="400" cy="128" rx="4" ry="6" fill="#ffcc00" opacity="0.9"/>
+  <rect x="442" y="258" width="6" height="20" fill="#cc9900"/>
+  <ellipse cx="445" cy="258" rx="4" ry="6" fill="#ffcc00" opacity="0.9"/>
+  <rect x="297" y="168" width="6" height="20" fill="#cc9900"/>
+  <ellipse cx="300" cy="168" rx="4" ry="6" fill="#ffcc00" opacity="0.9"/>
+  <rect x="497" y="168" width="6" height="20" fill="#cc9900"/>
+  <ellipse cx="500" cy="168" rx="4" ry="6" fill="#ffcc00" opacity="0.9"/>
+  <rect x="352" y="258" width="6" height="20" fill="#cc9900"/>
+  <ellipse cx="355" cy="258" rx="4" ry="6" fill="#ffcc00" opacity="0.9"/>
+  <!-- Robed figure center back -->
+  <ellipse cx="400" cy="265" rx="20" ry="8" fill="#0a0505"/>
+  <rect x="385" y="220" width="30" height="50" fill="#0a0505"/>
+  <circle cx="400" cy="215" r="14" fill="#0a0505"/>
+  <!-- Hood/shadow effect on face -->
+  <ellipse cx="400" cy="215" rx="14" ry="12" fill="#050202"/>
+  <!-- Raised hand holding orb -->
+  <line x1="415" y1="235" x2="435" y2="210" stroke="#0a0505" stroke-width="4"/>
+  <circle cx="438" cy="207" r="10" fill="#8b0000" opacity="0.9"/>
+  <circle cx="438" cy="207" r="6" fill="#ff0000" opacity="0.6"/>
+  <!-- Other robed figures in circle -->
+  <ellipse cx="250" cy="295" rx="15" ry="6" fill="#050202"/>
+  <rect x="240" y="260" width="20" height="38" fill="#050202"/>
+  <circle cx="250" cy="256" r="12" fill="#050202"/>
+  <ellipse cx="550" cy="295" rx="15" ry="6" fill="#050202"/>
+  <rect x="540" y="260" width="20" height="38" fill="#050202"/>
+  <circle cx="550" cy="256" r="12" fill="#050202"/>
+  <ellipse cx="300" cy="320" rx="15" ry="6" fill="#050202"/>
+  <rect x="290" y="285" width="20" height="38" fill="#050202"/>
+  <circle cx="300" cy="281" r="12" fill="#050202"/>
+  <ellipse cx="500" cy="320" rx="15" ry="6" fill="#050202"/>
+  <rect x="490" y="285" width="20" height="38" fill="#050202"/>
+  <circle cx="500" cy="281" r="12" fill="#050202"/>
+  <!-- Dark wisps -->
+  <path d="M300,230 C320,210 380,250 400,220" stroke="#330000" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M500,230 C480,210 420,250 400,220" stroke="#330000" stroke-width="2" fill="none" opacity="0.6"/>
+  <!-- Text overlay -->
+  <rect x="0" y="405" width="800" height="45" fill="black" opacity="0.8"/>
+  <text x="400" y="430" text-anchor="middle" font-size="15" fill="#8b0000" font-family="Georgia, serif" font-style="italic">Exclusive: Secret Society 'The Obsidian Circle' Infiltrates Banking Guild</text>
+</svg>

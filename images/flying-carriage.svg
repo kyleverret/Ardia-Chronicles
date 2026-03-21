@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="daySkyCar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a6a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#4a8aaa;stop-opacity:1"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="80%" cy="15%" r="25%">
+      <stop offset="0%" style="stop-color:#ffffaa;stop-opacity:1"/>
+      <stop offset="40%" style="stop-color:#ffaa00;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#ff6600;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#daySkyCar)"/>
+  <!-- Sun -->
+  <circle cx="640" cy="70" r="50" fill="url(#sunGlow)"/>
+  <circle cx="640" cy="70" r="30" fill="#ffffcc" opacity="0.9"/>
+  <!-- Clouds -->
+  <ellipse cx="150" cy="120" rx="90" ry="30" fill="white" opacity="0.7"/>
+  <ellipse cx="200" cy="110" rx="70" ry="25" fill="white" opacity="0.8"/>
+  <ellipse cx="500" cy="150" rx="100" ry="35" fill="white" opacity="0.6"/>
+  <ellipse cx="560" cy="140" rx="80" ry="28" fill="white" opacity="0.7"/>
+  <!-- City below (perspective) -->
+  <rect x="0" y="350" width="800" height="100" fill="#1a2a1a"/>
+  <rect x="50" y="300" width="40" height="150" fill="#152015"/>
+  <rect x="110" y="280" width="50" height="170" fill="#1a2a1a"/>
+  <rect x="170" y="320" width="35" height="130" fill="#0f1a0f"/>
+  <rect x="600" y="290" width="45" height="160" fill="#1a2a1a"/>
+  <rect x="660" y="305" width="55" height="145" fill="#152015"/>
+  <rect x="720" y="285" width="40" height="165" fill="#0f1a0f"/>
+  <!-- Expo tent/pavilion -->
+  <polygon points="250,350 450,300 650,350" fill="#2a1a5a"/>
+  <polygon points="280,350 450,310 620,350" fill="#3a2a6a"/>
+  <rect x="270" y="350" width="360" height="30" fill="#2a1a5a"/>
+  <!-- Flying carriage - main body -->
+  <rect x="310" y="190" width="180" height="80" fill="#8b6914" rx="10"/>
+  <rect x="320" y="200" width="160" height="60" fill="#c9a227" rx="8"/>
+  <!-- Carriage windows -->
+  <rect x="340" y="210" width="30" height="30" fill="#aaddff" rx="3" opacity="0.8"/>
+  <rect x="390" y="210" width="30" height="30" fill="#aaddff" rx="3" opacity="0.8"/>
+  <rect x="440" y="210" width="30" height="30" fill="#aaddff" rx="3" opacity="0.8"/>
+  <!-- Mana engine glow beneath -->
+  <ellipse cx="400" cy="275" rx="80" ry="15" fill="#7b2fff" opacity="0.7"/>
+  <ellipse cx="400" cy="275" rx="60" ry="10" fill="#ffffff" opacity="0.5"/>
+  <!-- Balloon/lift component on top -->
+  <ellipse cx="400" cy="165" rx="90" ry="40" fill="#cc2200" opacity="0.9"/>
+  <ellipse cx="400" cy="155" rx="85" ry="35" fill="#ff3300" opacity="0.8"/>
+  <rect x="395" y="190" width="10" height="20" fill="#8b6914"/>
+  <!-- Propeller -->
+  <line x1="270" y1="230" x2="290" y2="230" stroke="#555" stroke-width="3"/>
+  <line x1="280" y1="220" x2="280" y2="240" stroke="#555" stroke-width="3"/>
+  <circle cx="280" cy="230" r="5" fill="#888"/>
+  <line x1="510" y1="230" x2="530" y2="230" stroke="#555" stroke-width="3"/>
+  <line x1="520" y1="220" x2="520" y2="240" stroke="#555" stroke-width="3"/>
+  <circle cx="520" cy="230" r="5" fill="#888"/>
+  <!-- Magic exhaust trails -->
+  <path d="M310,260 C280,270 260,280 230,275" stroke="#7b2fff" stroke-width="3" fill="none" opacity="0.7" stroke-dasharray="5,3"/>
+  <path d="M490,260 C520,270 550,280 570,275" stroke="#7b2fff" stroke-width="3" fill="none" opacity="0.7" stroke-dasharray="5,3"/>
+  <!-- Crowd watching from below -->
+  <ellipse cx="300" cy="385" rx="12" ry="8" fill="#0a1a0a"/>
+  <ellipse cx="350" cy="380" rx="12" ry="8" fill="#0a1a0a"/>
+  <ellipse cx="400" cy="383" rx="12" ry="8" fill="#0a1a0a"/>
+  <ellipse cx="450" cy="380" rx="12" ry="8" fill="#0a1a0a"/>
+  <ellipse cx="500" cy="385" rx="12" ry="8" fill="#0a1a0a"/>
+  <!-- Text overlay -->
+  <rect x="0" y="405" width="800" height="45" fill="black" opacity="0.7"/>
+  <text x="400" y="430" text-anchor="middle" font-size="15" fill="#c9a227" font-family="Georgia, serif" font-style="italic">Inventor Presents Working Mana-Powered Flying Carriage at Innovation Expo</text>
+</svg>

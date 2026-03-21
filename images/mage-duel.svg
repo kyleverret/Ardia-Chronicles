@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <radialGradient id="blueBlast" cx="35%" cy="50%" r="30%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"/>
+      <stop offset="30%" style="stop-color:#00aaff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#0033ff;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="redBlast" cx="65%" cy="50%" r="30%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"/>
+      <stop offset="30%" style="stop-color:#ff4400;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#aa0000;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="arenaFloor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a3a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0a0a1a;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Arena background -->
+  <rect width="800" height="450" fill="#080818"/>
+  <!-- Arena dome ceiling -->
+  <ellipse cx="400" cy="0" rx="400" ry="200" fill="#111122" opacity="0.9"/>
+  <!-- Magic clash energy -->
+  <rect width="800" height="450" fill="url(#blueBlast)" opacity="0.4"/>
+  <rect width="800" height="450" fill="url(#redBlast)" opacity="0.4"/>
+  <!-- Energy collision point center -->
+  <circle cx="400" cy="230" r="50" fill="white" opacity="0.9"/>
+  <circle cx="400" cy="230" r="80" fill="#ffaa00" opacity="0.4"/>
+  <circle cx="400" cy="230" r="120" fill="#ff5500" opacity="0.2"/>
+  <!-- Shockwave rings -->
+  <circle cx="400" cy="230" r="150" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <circle cx="400" cy="230" r="200" fill="none" stroke="white" stroke-width="1.5" opacity="0.2"/>
+  <!-- Blue mage (left) -->
+  <ellipse cx="180" cy="300" rx="22" ry="10" fill="#000044"/>
+  <rect x="166" y="240" width="28" height="65" fill="#000044"/>
+  <circle cx="180" cy="232" r="20" fill="#000044"/>
+  <!-- Staff raised -->
+  <line x1="200" y1="250" x2="280" y2="210" stroke="#000044" stroke-width="4"/>
+  <circle cx="283" cy="208" r="12" fill="#00aaff" opacity="0.9"/>
+  <circle cx="283" cy="208" r="6" fill="white"/>
+  <!-- Blue energy beam -->
+  <path d="M283,208 C330,215 360,222 400,230" stroke="#00aaff" stroke-width="8" fill="none" opacity="0.8"/>
+  <path d="M283,208 C330,215 360,222 400,230" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+  <!-- Red mage (right) -->
+  <ellipse cx="620" cy="300" rx="22" ry="10" fill="#440000"/>
+  <rect x="606" y="240" width="28" height="65" fill="#440000"/>
+  <circle cx="620" cy="232" r="20" fill="#440000"/>
+  <!-- Staff raised left -->
+  <line x1="600" y1="250" x2="520" y2="210" stroke="#440000" stroke-width="4"/>
+  <circle cx="517" cy="208" r="12" fill="#ff4400" opacity="0.9"/>
+  <circle cx="517" cy="208" r="6" fill="white"/>
+  <!-- Red energy beam -->
+  <path d="M517,208 C480,215 445,222 400,230" stroke="#ff4400" stroke-width="8" fill="none" opacity="0.8"/>
+  <path d="M517,208 C480,215 445,222 400,230" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+  <!-- Arena floor -->
+  <rect x="0" y="360" width="800" height="90" fill="url(#arenaFloor)"/>
+  <ellipse cx="400" cy="360" rx="350" ry="20" fill="#1a1a3a" opacity="0.8"/>
+  <!-- Crowd silhouettes in stands -->
+  <rect x="0" y="60" width="800" height="80" fill="#0a0a20"/>
+  <!-- Crowd heads -->
+  <circle cx="50" cy="95" r="8" fill="#050510"/>
+  <circle cx="80" cy="88" r="8" fill="#050510"/>
+  <circle cx="110" cy="95" r="8" fill="#050510"/>
+  <circle cx="140" cy="88" r="8" fill="#050510"/>
+  <circle cx="300" cy="92" r="8" fill="#050510"/>
+  <circle cx="330" cy="85" r="8" fill="#050510"/>
+  <circle cx="500" cy="90" r="8" fill="#050510"/>
+  <circle cx="530" cy="85" r="8" fill="#050510"/>
+  <circle cx="660" cy="90" r="8" fill="#050510"/>
+  <circle cx="690" cy="85" r="8" fill="#050510"/>
+  <circle cx="720" cy="90" r="8" fill="#050510"/>
+  <circle cx="750" cy="85" r="8" fill="#050510"/>
+  <!-- Text overlay -->
+  <rect x="0" y="405" width="800" height="45" fill="black" opacity="0.7"/>
+  <text x="400" y="430" text-anchor="middle" font-size="15" fill="#00aaff" font-family="Georgia, serif" font-style="italic">Annual Mage Duel Tournament Opens Registration; Record 500 Entrants Sign Up</text>
+</svg>

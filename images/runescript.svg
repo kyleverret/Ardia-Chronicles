@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <radialGradient id="deviceGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00aaff;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#00aaff;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="cityBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#050a1a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0a0515;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#cityBg)"/>
+  <!-- Night city background -->
+  <rect x="0" y="200" width="100" height="250" fill="#070715"/>
+  <rect x="90" y="170" width="60" height="280" fill="#080818"/>
+  <rect x="640" y="190" width="70" height="260" fill="#070715"/>
+  <rect x="700" y="160" width="100" height="290" fill="#080818"/>
+  <!-- Building windows lit -->
+  <rect x="20" y="220" width="8" height="8" fill="#ffcc44" opacity="0.7"/>
+  <rect x="35" y="220" width="8" height="8" fill="#44aaff" opacity="0.7"/>
+  <rect x="20" y="240" width="8" height="8" fill="#ffcc44" opacity="0.5"/>
+  <rect x="660" y="210" width="8" height="8" fill="#44aaff" opacity="0.7"/>
+  <rect x="675" y="210" width="8" height="8" fill="#ffcc44" opacity="0.7"/>
+  <!-- Device 1 (large, floating center) -->
+  <rect x="280" y="160" width="100" height="160" fill="#1a2a3a" rx="10" stroke="#00aaff" stroke-width="2"/>
+  <rect x="290" y="175" width="80" height="110" fill="#0d1a2a" rx="5"/>
+  <!-- Screen content - runes/communication -->
+  <text x="310" y="200" font-size="12" fill="#00aaff" opacity="0.9">ᚱᚢᚾᛖ</text>
+  <text x="305" y="218" font-size="10" fill="#aaddff" opacity="0.7">SIGNAL: ████</text>
+  <text x="308" y="235" font-size="9" fill="#00ff88" opacity="0.8">&gt; MSG RECV</text>
+  <text x="308" y="250" font-size="9" fill="#aaddff" opacity="0.6">FROM: PRAXIS</text>
+  <!-- Home button -->
+  <circle cx="330" cy="300" r="8" fill="#2a3a4a" stroke="#00aaff" stroke-width="1"/>
+  <!-- Glow -->
+  <ellipse cx="330" cy="240" rx="60" ry="80" fill="url(#deviceGlow)"/>
+  <!-- Device 2 (citizen using it) -->
+  <rect x="440" y="210" width="70" height="110" fill="#1a2a3a" rx="8" stroke="#00aaff" stroke-width="1.5"/>
+  <rect x="448" y="220" width="54" height="75" fill="#0d1a2a" rx="4"/>
+  <text x="460" y="243" font-size="10" fill="#00aaff">ᚱᚢᚾᛖ</text>
+  <text x="455" y="258" font-size="8" fill="#00ff88">&gt; CONNECTED</text>
+  <!-- Citizen holding device -->
+  <ellipse cx="475" cy="370" rx="18" ry="8" fill="#0a0a1a"/>
+  <rect x="463" y="315" width="24" height="60" fill="#0a0a1a"/>
+  <circle cx="475" cy="308" r="16" fill="#0a0a1a"/>
+  <!-- Arm extended holding device -->
+  <line x1="480" y1="330" x2="460" y2="310" stroke="#0a0a1a" stroke-width="5"/>
+  <!-- Network visualization - connecting lines -->
+  <line x1="330" y1="160" x2="475" y2="210" stroke="#00aaff" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <line x1="330" y1="160" x2="200" y2="250" stroke="#00aaff" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <line x1="330" y1="160" x2="600" y2="230" stroke="#00aaff" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <!-- Node points in network -->
+  <circle cx="200" cy="250" r="6" fill="#00aaff" opacity="0.7"/>
+  <circle cx="600" cy="230" r="6" fill="#00aaff" opacity="0.7"/>
+  <circle cx="150" cy="180" r="5" fill="#00aaff" opacity="0.6"/>
+  <circle cx="650" cy="270" r="5" fill="#00aaff" opacity="0.6"/>
+  <!-- Market stall with devices -->
+  <rect x="100" y="330" width="120" height="60" fill="#111"/>
+  <rect x="95" y="325" width="130" height="10" fill="#c9a227"/>
+  <text x="140" y="360" font-size="11" fill="#00aaff">RUNESCRIPTS</text>
+  <text x="132" y="378" font-size="10" fill="#c9a227">5 GOLD EACH</text>
+  <!-- Text overlay -->
+  <rect x="0" y="405" width="800" height="45" fill="black" opacity="0.7"/>
+  <text x="400" y="430" text-anchor="middle" font-size="14" fill="#00aaff" font-family="Georgia, serif" font-style="italic">Runescript Communicators Now Available to Common Citizens at Affordable Prices</text>
+</svg>

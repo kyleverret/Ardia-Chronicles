@@ -13,7 +13,7 @@ const REPORTERS = [
     bio: "A veteran of twenty years covering the halls of the Grand Council, Lyra Stormweave has broken some of Ardia's most consequential political stories. Born in the coastal city of Valdris, she studied political science at the Praxis Academy before joining the Chronicle. She is known for her unrelenting pursuit of the truth and her deep network of sources within the Council chambers.",
     avatar: "LS",
     avatarColor: "#7b2fff",
-    image: "images/reporters/lyra-stormweave.png"
+    image: "images/reporters/lyra-stormweave.png",
     beat: "Politics & Government",
     articles: 847,
   },
@@ -24,7 +24,7 @@ const REPORTERS = [
     bio: "Dorian Ashveil has embedded with frontline forces across three major conflicts in Ardia's history. A former soldier himself, Dorian brings firsthand understanding of warfare and military strategy to his reporting. He carries an enchanted scar from the Battle of the Emberfields—a badge he wears with quiet pride. His dispatches from conflict zones are renowned for their unflinching honesty.",
     avatar: "DA",
     avatarColor: "#cc2200",
-    image: "images/reporters/dorian-ashveil.png"
+    image: "images/reporters/dorian-ashveil.png",
     beat: "Military & Conflict",
     articles: 634,
   },
@@ -35,7 +35,7 @@ const REPORTERS = [
     bio: "Mira Goldthorn grew up in the artist quarters of Praxis and has spent her career championing the cultural richness of Ardia. A classically trained singer herself, she brings insider knowledge to her coverage of the arts. She is the author of 'The Song and the Silence,' a history of Ardian musical traditions. Under her editorship, the Culture desk has won four Chronicle Excellence Awards.",
     avatar: "MG",
     avatarColor: "#aa33ff",
-    image: "images/reporters/mira-goldthorn.png"
+    image: "images/reporters/mira-goldthorn.png",
     beat: "Culture, Arts & Entertainment",
     articles: 1203,
   },
@@ -46,7 +46,7 @@ const REPORTERS = [
     bio: "Theron Blackstone holds two degrees from the Arcane Academy of Praxis—one in theoretical spell-craft and one in natural philosophy. He left a promising research career to pursue journalism, believing that scientific discoveries should be accessible to all citizens of Ardia. His columns 'The Curious Cosmos' run weekly and have a devoted following among both academics and general readers.",
     avatar: "TB",
     avatarColor: "#00ffcc",
-    image: "images/reporters/theron-blackstone.png"
+    image: "images/reporters/theron-blackstone.png",
     beat: "Science, Magic & Technology",
     articles: 512,
   },
@@ -57,7 +57,7 @@ const REPORTERS = [
     bio: "Sera Nightwhisper is the Chronicle's most celebrated investigative reporter, known for exposing corruption at every level of Ardian society. Her investigation into the Merchant Guild tax fraud scandal resulted in fourteen arrests and sweeping legislative reforms. She operates under constant threat—her office has been broken into six times—but she has never backed down from a story. Her methods are unorthodox but her sources are impeccable.",
     avatar: "SN",
     avatarColor: "#ff33aa",
-    image: "images/reporters/sera-nightwhisper.png"
+    image: "images/reporters/sera-nightwhisper.png",
     beat: "Investigations & Special Reports",
     articles: 389,
   },
@@ -68,7 +68,7 @@ const REPORTERS = [
     bio: "Gareth Ironwood was a dragonrider hopeful whose dreams were cut short by a training injury. He channeled his passion for competition into journalism and quickly became the most respected sports voice in Ardia. He covers everything from the Grand Mage Duels to the annual Ashfield Cup jousting tournament. His pre-match analyses are considered essential reading by team coaches and gamblers alike.",
     avatar: "GI",
     avatarColor: "#ffaa00",
-    image: "images/reporters/gareth-ironwood.png"
+    image: "images/reporters/gareth-ironwood.png",
     beat: "Sports & Tournaments",
     articles: 1456,
   },
@@ -79,7 +79,7 @@ const REPORTERS = [
     bio: "Nyx Shadowmere covers the criminal underworld of Ardia with a precise, unflinching eye. A former City Watch investigator, she brings procedural expertise that few journalists can match. She is said to have connections in every guild and criminal fraternity in Praxis, though she refuses to confirm or deny any of them. Her column 'Dark Alley' is the most-read section of the Chronicle's evening edition.",
     avatar: "NX",
     avatarColor: "#8b0000",
-    image: "images/reporters/nyx-shadowmere.png"
+    image: "images/reporters/nyx-shadowmere.png",
     beat: "Crime, Courts & Justice",
     articles: 728,
   },
@@ -90,7 +90,7 @@ const REPORTERS = [
     bio: "Elara Sunforge came from a family of merchant traders and understands the ebb and flow of Ardia's economy from the ground up. She has a gift for translating the complex movements of crystal markets, shipping guild contracts, and banking guild politics into language that every citizen can understand. Under her tenure, the Business desk has expanded to include a dedicated Magitech Markets section.",
     avatar: "ES",
     avatarColor: "#c9a227",
-    image: "images/reporters/elara-sunforge.png"
+    image: "images/reporters/elara-sunforge.png",
     beat: "Business, Economy & Markets",
     articles: 934,
   },
@@ -101,7 +101,7 @@ const REPORTERS = [
     bio: "Vael Moonstrike is the voice of Ardia's natural world. Half-elven by heritage, they grew up in the border forests between the elven territories and the human settlements and have an intimate understanding of the delicate balance between civilization and nature. Their reporting on the deforestation crisis has sparked legislative debate at the Grand Council. Vael is a licensed nature warden and communicates with forest spirits.",
     avatar: "VM",
     avatarColor: "#00ff88",
-    image: "images/reporters/vael-moonstrike.png"
+    image: "images/reporters/vael-moonstrike.png",
     beat: "Environment, Nature & Climate",
     articles: 441,
   },
@@ -112,7 +112,7 @@ const REPORTERS = [
     bio: "Oryn Duskfall is the youngest member of the Chronicle's senior reporting staff, having joined at just twenty-two. A self-taught artificer and gadget enthusiast, Oryn has an unmatched ability to identify which new magitech inventions will reshape Ardian society and which are mere novelties. They broke the story on the first functioning runescript network prototype six months before its official announcement.",
     avatar: "OD",
     avatarColor: "#ff6600",
-    image: "images/reporters/oryn-duskfall.png"
+    image: "images/reporters/oryn-duskfall.png",
     beat: "Technology, Innovation & Invention",
     articles: 267,
   },

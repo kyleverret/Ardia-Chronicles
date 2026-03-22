@@ -1021,3 +1021,401 @@ a:hover {
 .stories-grid .story-card:nth-child(6)  { animation-delay: 0.12s; }
 .stories-grid .story-card:nth-child(7)  { animation-delay: 0.14s; }
 .stories-grid .story-card:nth-child(8)  { animation-delay: 0.16s; }
+
+/* ============================================================
+   ARCHIVE PAGE
+   ============================================================ */
+
+.archive-filters {
+  background: var(--paper-dark);
+  border-top: 2px solid var(--gold-dark);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 16px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-group--count {
+  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.filter-label {
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-family: var(--font-display);
+}
+
+.filter-select {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--gold-dark);
+  padding: 6px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.filter-select:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.archive-count {
+  font-size: 0.78rem;
+  color: var(--gold-dark);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.archive-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.archive-loading {
+  text-align: center;
+  padding: 48px;
+  color: var(--gold-dark);
+  font-style: italic;
+}
+
+.archive-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--paper-dark);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.archive-item:hover {
+  background: var(--paper-mid);
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.archive-item:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.archive-item-image-wrap {
+  flex-shrink: 0;
+  width: 100px;
+  height: 70px;
+  overflow: hidden;
+  border: 1px solid var(--paper-dark);
+}
+
+.archive-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.archive-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.archive-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.archive-item-category {
+  display: inline-block;
+  padding: 1px 7px;
+  font-size: 0.62rem;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 2px;
+  font-family: var(--font-display);
+}
+
+.archive-item-date {
+  font-size: 0.72rem;
+  color: #7a6a4a;
+  font-style: italic;
+}
+
+.archive-item-reporter {
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+}
+
+.archive-item-headline {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.archive-item-deck {
+  font-size: 0.8rem;
+  color: #5a4a3a;
+  line-height: 1.4;
+}
+
+@media (max-width: 500px) {
+  .archive-item-image-wrap { display: none; }
+  .archive-filters { padding: 12px 16px; }
+  .filter-select { min-width: 130px; }
+}
+
+/* ============================================================
+   EDITORIAL BOARD
+   ============================================================ */
+
+.editorial-board-section {
+  background: var(--paper-dark);
+  border-top: 3px double var(--gold-dark);
+  padding-bottom: 48px;
+  margin-top: 0;
+}
+
+.editorial-board-header {
+  background: #1a0e05;
+  padding: 28px 24px 20px;
+  text-align: center;
+}
+
+.editorial-board-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 8px 0 6px;
+}
+
+.editorial-board-subtitle {
+  color: #b8a070;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.editorial-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 32px 24px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.editorial-member {
+  background: var(--paper);
+  border: 1px solid var(--gold-dark);
+  border-top: 3px solid var(--gold);
+  padding: 20px;
+}
+
+.editorial-member-top {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.editorial-member-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--ink);
+}
+
+.editorial-member-title {
+  font-size: 0.8rem;
+  color: var(--crimson);
+  font-style: italic;
+  margin: 2px 0;
+}
+
+.editorial-member-years {
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  letter-spacing: 0.03em;
+}
+
+.editorial-member-bio {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #3a2a1a;
+}
+
+/* ============================================================
+   LEGAL PAGES (privacy.html, terms.html)
+   ============================================================ */
+
+.legal-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.legal-effective-date {
+  font-size: 0.85rem;
+  color: var(--gold-dark);
+  font-style: italic;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--paper-dark);
+}
+
+.legal-section {
+  margin-bottom: 32px;
+}
+
+.legal-section-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--ink);
+  border-bottom: 1px solid var(--gold-dark);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.legal-section-body p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #3a2a1a;
+  margin-bottom: 10px;
+}
+
+.legal-section-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   FOOTER LINK STYLES
+   ============================================================ */
+
+.footer-legal a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.footer-legal a:hover {
+  color: var(--gold-light);
+}
+
+/* ============================================================
+   INDIVIDUAL STORY PAGES (stories/{id}.html)
+   ============================================================ */
+
+.story-page-main {
+  background: var(--paper);
+  min-height: 60vh;
+  padding: 32px 16px 64px;
+}
+
+.story-page-article {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* SOCIAL SHARE BAR */
+.share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+  margin: 24px 0;
+  border-top: 1px solid var(--paper-dark);
+  border-bottom: 1px solid var(--paper-dark);
+}
+
+.share-bar-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-right: 4px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.share-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.share-btn--twitter  { background: #000;   color: #fff; }
+.share-btn--facebook { background: #1877f2; color: #fff; }
+.share-btn--linkedin { background: #0a66c2; color: #fff; }
+.share-btn--copy     { background: var(--paper-dark); color: var(--ink); border: 1px solid var(--gold-dark); }
+
+@media (max-width: 500px) {
+  .share-bar { gap: 8px; }
+  .share-btn { padding: 6px 10px; font-size: 0.78rem; }
+}
+
+.story-page-link-wrap {
+  margin: 20px 0 8px;
+  text-align: right;
+}
+
+.story-page-link {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--crimson);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.story-page-link:hover {
+  border-bottom-color: var(--crimson);
+}

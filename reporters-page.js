@@ -77,9 +77,32 @@
     }).join("");
   }
 
+  function renderEditorialBoard() {
+    const grid = document.getElementById("editorial-board-grid");
+    if (!grid || typeof EDITORIAL_BOARD === "undefined") return;
+
+    grid.innerHTML = EDITORIAL_BOARD.map((member) => `
+      <div class="editorial-member">
+        <div class="editorial-member-top">
+          <div
+            class="reporter-card-avatar"
+            style="background-color: ${escapeHtml(member.avatarColor)}; flex-shrink:0;"
+          >${escapeHtml(member.avatar)}</div>
+          <div>
+            <div class="editorial-member-name">${escapeHtml(member.name)}</div>
+            <div class="editorial-member-title">${escapeHtml(member.title)}</div>
+            <div class="editorial-member-years">${escapeHtml(String(member.yearsAtChronicle))} years at the Chronicle</div>
+          </div>
+        </div>
+        <p class="editorial-member-bio">${escapeHtml(member.bio)}</p>
+      </div>
+    `).join("");
+  }
+
   function init() {
     setCurrentDate();
     renderReporters();
+    renderEditorialBoard();
   }
 
   if (document.readyState === "loading") {

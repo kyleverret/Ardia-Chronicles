@@ -28,17 +28,12 @@
   function setCurrentDate() {
     const el = document.getElementById("current-date");
     if (!el) return;
-    // Use Ardia date format
-    const days = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh"];
-    const months = [
-      "Frost Month", "Thaw Month", "Planting Month", "Growing Month",
-      "Harvest Month", "Sun Month", "Storm Month", "Shadow Month",
-      "Gold Month", "Ember Month", "Frost Month", "Deep Winter"
-    ];
+    const ardiaMonths = (typeof ARDIA_MONTHS !== "undefined")
+      ? ARDIA_MONTHS.map((m) => m.name)
+      : ["Frosthold","Iceveil","Thawbreak","Bloomrise","Brightmantle","Highsun",
+         "Embertide","Harvestmoon","Goldenveil","Shadowfall","Ashgale","Starnight"];
     const now = new Date();
-    const dayNum = now.getDate();
-    const monthName = months[now.getMonth()];
-    el.textContent = `${dayNum} ${monthName}, Year 847 AP`;
+    el.textContent = `${now.getDate()} ${ardiaMonths[now.getMonth()]}, Year 847 AP`;
   }
 
   // --- RENDER STORY CARD ---
@@ -178,6 +173,12 @@
         </div>
 
         <div class="story-body">${story.body}</div>
+
+        <div class="story-page-link-wrap">
+          <a href="stories/${escapeHtml(story.id)}.html" class="story-page-link" target="_blank">
+            Open full story page &rarr;
+          </a>
+        </div>
 
         <div class="reporter-bio-footer">
           <div

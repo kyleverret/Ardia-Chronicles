@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archives — The Ardia Chronicle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date" id="current-date"></div>
+      <div class="masthead-edition">Morning Edition · Year 847 AP</div>
+    </div>
+    <div class="masthead-title">
+      <div class="masthead-ornament">✦ ✦ ✦</div>
+      <h1 class="paper-name">The Ardia Chronicle</h1>
+      <p class="paper-tagline"><em>"Truth Binds Stronger Than Magic"</em></p>
+      <div class="masthead-ornament">✦ ✦ ✦</div>
+    </div>
+    <nav class="masthead-nav">
+      <a href="index.html" class="nav-link">&larr; Back to News</a>
+      <a href="index.html" class="nav-link">Politics</a>
+      <a href="index.html" class="nav-link">Conflict</a>
+      <a href="index.html" class="nav-link">Culture</a>
+      <a href="index.html" class="nav-link">Science &amp; Magic</a>
+      <a href="index.html" class="nav-link">Sports</a>
+      <a href="index.html" class="nav-link">Crime</a>
+      <a href="reporters.html" class="nav-link">Our Reporters</a>
+      <a href="archive.html" class="nav-link active">Archives</a>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="reporters-page-header">
+    <div class="masthead-ornament">✦ ✦ ✦</div>
+    <h2 class="reporters-page-title">The Chronicle Archives</h2>
+    <p class="reporters-page-subtitle">
+      Every dispatch, every investigation, every story — preserved in full
+    </p>
+    <div class="masthead-ornament">✦ ✦ ✦</div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="archive-filters">
+    <div class="filter-group">
+      <label for="filter-category" class="filter-label">Section</label>
+      <select id="filter-category" class="filter-select">
+        <option value="all">All Sections</option>
+        <option value="politics">Politics</option>
+        <option value="conflict">Conflict</option>
+        <option value="culture">Culture</option>
+        <option value="science">Science &amp; Magic</option>
+        <option value="investigation">Investigation</option>
+        <option value="sports">Sports</option>
+        <option value="crime">Crime</option>
+        <option value="economy">Economy</option>
+        <option value="environment">Environment</option>
+        <option value="technology">Technology</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filter-month" class="filter-label">Month</label>
+      <select id="filter-month" class="filter-select">
+        <option value="all">All Months</option>
+        <option value="Frosthold">Frosthold (January)</option>
+        <option value="Iceveil">Iceveil (February)</option>
+        <option value="Thawbreak">Thawbreak (March)</option>
+        <option value="Bloomrise">Bloomrise (April)</option>
+        <option value="Brightmantle">Brightmantle (May)</option>
+        <option value="Highsun">Highsun (June)</option>
+        <option value="Embertide">Embertide (July)</option>
+        <option value="Harvestmoon">Harvestmoon (August)</option>
+        <option value="Goldenveil">Goldenveil (September)</option>
+        <option value="Shadowfall">Shadowfall (October)</option>
+        <option value="Ashgale">Ashgale (November)</option>
+        <option value="Starnight">Starnight (December)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filter-reporter" class="filter-label">Reporter</label>
+      <select id="filter-reporter" class="filter-select">
+        <option value="all">All Reporters</option>
+        <!-- Populated by archive-page.js -->
+      </select>
+    </div>
+    <div class="filter-group filter-group--count">
+      <span id="archive-count" class="archive-count"></span>
+    </div>
+  </div>
+
+  <!-- STORY MODAL OVERLAY (same structure as index.html) -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close story">&times;</button>
+      <article class="modal-article" id="modal-article"></article>
+    </div>
+  </div>
+
+  <!-- ARCHIVE LIST -->
+  <div class="archive-container">
+    <div id="archive-list" class="archive-list">
+      <p class="archive-loading">Loading the Chronicle archives&hellip;</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-masthead">
+        <div class="footer-ornament">✦ ✦ ✦</div>
+        <h2 class="footer-title">The Ardia Chronicle</h2>
+        <p class="footer-tagline"><em>"Truth Binds Stronger Than Magic"</em></p>
+        <div class="footer-ornament">✦ ✦ ✦</div>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Publication</h4>
+          <p>Founded Year 701 AP</p>
+          <p>Praxis, Ardia</p>
+          <p>Daily Morning &amp; Evening Editions</p>
+        </div>
+        <div class="footer-col">
+          <h4>Sections</h4>
+          <p><a href="index.html">Politics</a></p>
+          <p><a href="index.html">Conflict &amp; Military</a></p>
+          <p><a href="index.html">Culture &amp; Arts</a></p>
+          <p><a href="index.html">Science &amp; Magic</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <p><a href="index.html">Economy</a></p>
+          <p><a href="index.html">Sports &amp; Tournaments</a></p>
+          <p><a href="archive.html">Full Archives</a></p>
+          <p><a href="reporters.html">Our Reporters</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>The Chronicle</h4>
+          <p><a href="reporters.html#editorial-board">Editorial Board</a></p>
+          <p><a href="privacy.html">Privacy Policy</a></p>
+          <p><a href="terms.html">Terms of Use</a></p>
+          <p><a href="terms.html#copyright">Copyright Notice</a></p>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>© Year 847 AP, The Ardia Chronicle. All rights reserved. Reproduction without permission of the Publisher is prohibited under the Grand Council Press Act of Year 712 AP.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="archive-page.js"></script>
+</body>
+</html>

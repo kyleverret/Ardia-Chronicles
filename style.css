@@ -1340,12 +1340,31 @@ a:hover {
 .story-page-main {
   background: var(--paper);
   min-height: 60vh;
-  padding: 32px 16px 64px;
+  padding: 0 0 64px;
 }
 
 .story-page-article {
   max-width: 780px;
   margin: 0 auto;
+}
+
+/* Story pages: hero image can be taller than the modal cap */
+.story-page-article .story-hero-image {
+  max-height: 480px;
+}
+
+/* Story pages: body text needs padding on both sides */
+.story-page-article .modal-article-body {
+  padding: 28px 36px 36px;
+}
+
+@media (max-width: 600px) {
+  .story-page-article .modal-article-body {
+    padding: 16px 16px 28px;
+  }
+  .story-page-article .story-hero-image {
+    max-height: 260px;
+  }
 }
 
 /* SOCIAL SHARE BAR */
@@ -1418,4 +1437,14 @@ a:hover {
 
 .story-page-link:hover {
   border-bottom-color: var(--crimson);
+}
+
+/* Editorial board portrait image */
+.editorial-portrait {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 2px solid var(--gold-dark);
+  flex-shrink: 0;
 }

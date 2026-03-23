@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Aldric Vance was expected to testify under temple truth-reading protocols. His residence shows no signs of struggle." />
   <meta name="twitter:image" content="../images/generated/politics-20260323115500.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>Chancellor Morcroft issued a brief statement through his press secretary expressing 'concern for Aldric's wellbeing' and urging anyone with information to contact the City Watch. When I asked whether the Chancellor had spoken with Vance in the days before his disappearance, the press secretary ended our conversation. I have confirmed through Council sources that Morcroft has requested an emergency meeting with High Regent Marcen for later today — a meeting from which all staff have been excluded.</p>
 
 <p>I have covered Chancellor Morcroft since his first term on the Council. I have watched him survive the no-confidence vote by a single ballot, navigate the Vanthorn negotiations, and maintain his coalition through crises that would have destroyed lesser politicians. But coalitions require loyalty, and loyalty requires trust. Aldric Vance knew where every secret was buried. His silence, whether purchased or permanent, suggests that someone decided the cost of his testimony was too high to pay. The question now is whether he fled, was taken, or met the same fate as Watch Commander Blackshore. And the question after that is what he knew that made him worth silencing.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("politics-20260323115500");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

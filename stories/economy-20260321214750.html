@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Ardia faces potential power shortages as largest arcane crystal supplier suspends extraction. Prices surge 40% in morning trading." />
   <meta name="twitter:image" content="../images/generated/economy-20260321214750.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>Lady Celeste Ashworth, Guildmaster of the Ardia Banking Guild, urged calm during an emergency afternoon session. "We have seen supply disruptions before, and our markets have always found equilibrium," she stated. However, several economic advisors I spoke with privately expressed concern that this dispute comes at a particularly vulnerable moment. The realm's crystal reserves were already depleted following the extraordinary magical expenditures required to resolve the Shadowveil Crisis earlier this year.</p>
 
 <p>Crown Economic Minister Aldric Pembrook has called for emergency negotiations between the Mining Collective and the Association of Mine Proprietors, scheduled to begin tomorrow at the Hall of Commerce in Kingsport. Both sides have agreed to attend, though neither has shown willingness to compromise on core demands. Citizens concerned about winter heating supplies would be wise to secure backup firewood arrangements while talks proceed. This reporter will continue monitoring developments from the Exchange floor.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("economy-20260321214750");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

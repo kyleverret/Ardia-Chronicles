@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Musicians and scholars call the 400-year-old composition 'the find of a generation' as preparations begin for historic premiere." />
   <meta name="twitter:image" content="../images/generated/culture-20260321214025.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>Not everyone shares the enthusiasm. Professor Maren Thatch of the Praxis Academy of Arcane Studies has urged caution, noting that musical enchantments from the Moonfire era were known to produce unpredictable effects. "Maestro Venn was a genius, but he worked with magical theories we no longer fully understand," she warned. "Before anyone plays a single note, we must ensure this symphony won't accidentally summon something we cannot control."</p>
 
 <p>The Chronicle will continue to follow this remarkable story as scholars work to decipher Venn's ancient notations. For now, music lovers across Ardia are holding their breath, hoping to finally hear the legendary composition their great-great-grandparents could only dream about.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("culture-20260321214025");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

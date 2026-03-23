@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Unprecedented use of emergency powers follows two-week standoff. Replacement appointees already en route to provinces." />
   <meta name="twitter:image" content="../images/generated/politics-20260322170206.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The dismissed governors have until the Hour of First Light tomorrow to vacate their offices or face arrest for obstruction of Crown function. Governor Thornbury of Greyward — whose province is already struggling with ley-line disruptions and crystal production failures — issued a statement calling the dismissal "illegal" and promising to challenge it before Magistrate Thornwood's court. Given that Thornwood is currently sheltering witnesses in the Vanthorn case and has accepted testimony from forest spirits, her docket is not lacking for constitutional crises. I suspect she will take the case regardless. Someone must eventually draw a line around executive power, and the usual mechanisms appear to be failing.</p>
 
 <p>Chancellor Morcroft survived his no-confidence vote by a single ballot three days ago. The Reform Coalition's budget standoff collapsed yesterday. The Expansionist faction now controls more levers of power than at any point since the Shadow Legion crisis began. I have watched Ardian politics long enough to recognize when a careful equilibrium tips toward consolidation. Whether that consolidation serves stability or something less wholesome is a question I intend to keep asking — loudly, and in print — until someone provides an answer that holds up to scrutiny.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("politics-20260322170206");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

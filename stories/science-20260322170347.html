@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Independent verification of CrystalCore Industries' Mark III processors reveals systematic underreporting of magical consumption." />
   <meta name="twitter:image" content="../images/generated/science-20260322170347.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>CrystalCore Industries employs approximately twelve thousand workers and processes the majority of crystal ore extracted from the Greyward mines. Their power cells are installed in an estimated three hundred thousand devices across the realm. When I contacted Chief Technical Officer Mira Thorncraft for comment, she stated that my methodology was "fundamentally flawed" but declined to specify how. She did not dispute my numbers. She did not offer alternative measurements. She did, however, mention that CrystalCore's legal department would be reviewing this article for "potentially actionable claims." I have retained copies of all laboratory notes and calibration records.</p>
 
 <p>The MagiTech Guild, which is responsible for certifying power cell specifications, has so far declined to comment on whether it will open a formal investigation. Guild Master Ressa Thornwood's office indicated she is "reviewing the matter" — the same phrase her predecessor used for eighteen months before the Verdant Fungal Plague origin was finally acknowledged. I am not inclined to wait eighteen months. The ley-line network that powers our cities, grows our crops, and maintains the magical infrastructure we have come to depend upon is being drained faster than anyone has admitted. Someone decided that accurate consumption figures were less important than sales projections. I intend to find out who made that decision, and what else they have chosen not to tell us. Gerald, the luminous moss on my desk, has dimmed noticeably over the past month. I had attributed this to the season. I am no longer certain that explanation is sufficient.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("science-20260322170347");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Commander Varen Duskhollow claims senior officers receive orders from 'something that doesn't speak like a person.' Intelligence officials scrambling to verify." />
   <meta name="twitter:image" content="../images/generated/conflict-20260322161142.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The reports of identical nightmares among wounded soldiers — which I documented in my previous dispatch — found confirmation in Duskhollow's account. His own troops experienced the same phenomenon after occupying a secured site near the Miravel Woods' northern boundary. "They dreamed of silence," he said. "Of a voice that was not a voice, asking questions they could not remember upon waking." Two soldiers in his company stopped sleeping entirely. One walked into the Greyward three nights ago and has not returned. The garrison's field medics are currently evaluating Duskhollow and his officers for similar symptoms.</p>
 
 <p>I asked Duskhollow what he wanted the people of Ardia to understand. He was quiet for a long moment. "The Shadow Legion's soldiers believe they are fighting for independence from Grand Council authority," he finally said. "Most of them still believe that. I believed it." He looked at the maps spread before him, routes and positions that might cost hundreds of his former comrades their lives. "But someone is using that belief. Someone is moving us like pieces on a board toward objectives that have nothing to do with territory or politics." He met my eyes directly. "Find out who. Before whatever they are building is finished." Military intelligence has transferred Duskhollow to a secure location. I was not permitted to follow. But I have copies of three of his maps, and I intend to verify his claims personally. Something is directing this war toward ends that neither side's soldiers understand. The silence spreading through our forests, the drainage of ancient magic, the dreams that will not let wounded men rest — the pattern is there, if anyone chooses to see it.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("conflict-20260322161142");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

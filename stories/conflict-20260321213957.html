@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="After 47 days of brutal encirclement, the fortress city is finally free. But the cost has been staggering." />
   <meta name="twitter:image" content="../images/generated/conflict-20260321213957.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>This victory, while celebrated, raises troubling questions about the realm's stability. Lord Ashcroft remains at large, presumably gathering new allies among Ardia's discontented nobility. The Crown's forces are stretched thin following last year's Shadowveil Crisis, and mercenary companies have grown bold in the absence of strong military presence along the outer provinces. Marshal Dawnforge has recommended establishing permanent garrisons in vulnerable border territories, but such measures require gold the treasury may not possess.</p>
 
 <p>As I file this dispatch from a requisitioned tavern in Thornwall's market district, I can hear the sounds of reunited families in the streets—laughter mixing with grief for those who did not survive. War, in my experience, never offers clean endings. But tonight, at least, there is peace in Thornwall. Tomorrow, we begin counting what was lost.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("conflict-20260321213957");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

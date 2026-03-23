@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Theron Ashford says documents bearing his name authorized transfers he never approved. Guild launches internal investigation." />
   <meta name="twitter:image" content="../images/generated/economy-20260323100921.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The implications extend far beyond Ashford's personal reputation. If someone possessed the capability to forge signatures convincing enough to pass Banking Guild verification, the entire authorization framework governing Crown accounts must be considered compromised. I have confirmed that Magistrate Thornwood has requested an emergency review of every withdrawal document from the Reserve Vaults dating back to Year 840 AP — approximately two thousand individual transactions that must now be re-verified through temple truth-reading protocols.</p>
 
 <p>Ashford's name appeared in my reporting last week as a source raising concerns about financial connections between frozen magitech firms and active mining operations. I asked him whether he believes his cooperation with the Chronicle made him a target. He was quiet for a long moment before answering. "Someone needed a credible signature on fraudulent documents," he said. "I have been publicly involved in compliance oversight for nearly two decades. Perhaps the real question is how many other respected names have been borrowed without their owners' knowledge — and what else those names have been made to approve."</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("economy-20260323100921");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

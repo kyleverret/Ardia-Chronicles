@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Seventeen captured soldiers, held separately without contact, simultaneously recite coordinates to location Grand Army maps show as empty." />
   <meta name="twitter:image" content="../images/generated/conflict-20260323100556.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The location indicated by the coordinates lies in the same region where Ironvein Mining Consortium recently abandoned three excavation sites — the area Vael Moonstrike has documented as the "Breathing Ground." When I brought this connection to Commander Ashfall, she was silent for a long moment before saying only: "The scouts leave at dawn." I have requested permission to accompany them. That request remains under consideration.</p>
 
 <p>What troubles me most is not the synchronized speech itself, strange as it was. It is what followed. Within an hour of the incident, three of the prisoners began weeping without explanation. One kept repeating that he was sorry. Another asked the guards to kill him before "it wakes up." The prison healers sedated all three. They remain unconscious. I have covered this conflict for nine years, and I have seen what dark magic does to soldiers on both sides of the Shadow Frontier. I have never seen men more afraid of something inside themselves than of any enemy they might face in battle. Someone put something in these soldiers' minds — something that used them to deliver a message. The question now is who received it, and what they intend to do with coordinates pointing to ground that, according to multiple witnesses, has begun to breathe.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("conflict-20260323100556");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

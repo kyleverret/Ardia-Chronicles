@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="The Ironhelm Knights pull out hours before quarterfinals. Tournament officials launch emergency investigation into banned enchantments." />
   <meta name="twitter:image" content="../images/generated/sports-20260321214653.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>For the Ironhelm Knights, the stakes extend far beyond this tournament. The team has won three consecutive Ashfield Cups and was heavily favored to claim a historic fourth. If the curse allegations are substantiated against any team member, the Knights could face expulsion from the Continental Jousting League and forfeiture of their previous titles. Sir Roderick Ashworth, a decorated veteran of the Border Wars who transitioned to competitive jousting after the Treaty of Greymarch, has built his reputation on honor and fair play — making these accusations all the more jarring to longtime followers of the sport.</p>
 
 <p>This correspondent has covered countless upsets and controversies across the tournament grounds of Ardia, but rarely has a single morning so thoroughly upended a championship. The remaining eight teams now prepare for a bracket thrown into chaos, while spectators who traveled from as far as the Amber Isles must wait to learn whether the Cup's most anticipated matchups will proceed at all. I'll have full coverage as this story develops. Until then, keep your lances clean and your honor cleaner.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("sports-20260321214653");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

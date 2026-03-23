@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Reading suggests massive magical structure exists under the capital — one that predates the city's founding by centuries." />
   <meta name="twitter:image" content="../images/generated/science-20260323100709.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>Project Director Aldric Femworth, whose selective publication of Greyward data I exposed last month, has been notably absent from public briefings on this discovery. When I visited the Academy's Theoretical Spell-Craft wing this morning, three junior researchers independently mentioned that Femworth had requested all historical records pertaining to "pre-founding site surveys" be transferred to his private office. The Academy's archive director, who asked not to be named, confirmed this transfer occurred but declined to characterize its purpose. I have submitted a formal records request under the Press Act of Year 712.</p>
 
 <p>The timing concerns me. The ley-line network across eastern Ardia is draining at triple expected rates. Crystal power cells are failing. The Breathing Ground spreads through the Thornback Mountains. And now we discover that Praxis itself sits atop an ancient magical structure of unknown purpose, built by unknown hands, drawing on the same energy network that appears to be destabilizing across the realm. I do not yet know whether these phenomena are connected. But I have learned, after twelve years at this newspaper, that coincidences of this magnitude rarely are. Gerald — my luminous moss, for those unfamiliar — has begun pulsing in a rhythm I have not observed before. He started the night the sensors detected the signature. I have no scientific explanation for this. I am including it anyway, because at this point, I believe we need all the data we can gather.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("science-20260323100709");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

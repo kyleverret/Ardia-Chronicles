@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Three ancient guardians manifest at Council chambers demanding audience. Their testimony names the Ironvein Mining Consortium as the Greyward's source." />
   <meta name="twitter:image" content="../images/generated/environment-20260322161608.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>That question may define what comes next. Magistrate Thornwood — the same jurist currently sheltering human witnesses under temple sanctuary — has accepted a petition to hear the spirits' testimony under an ancient precedent I had to dig through Archive records to find. The Covenant of Living Voices, signed during the reign of Queen Aelindra the Wise, grants standing to "any being of the natural world whose existence is threatened by mortal action." The last time it was invoked, in Year 430, a river spirit's testimony shut down a tannery that was poisoning three villages downstream. Lord Velmeer's attorneys have already filed to block the hearing.</p>
 
 <p>I stood in the Council chamber for an hour after the spirits departed, watching the oak beams slowly stop humming. Rootdeep's final words remain with me: "We do not come to your halls because we wish to. We come because we are dying, and you are the ones holding the knife." The Greyward is spreading. The spirits have named its source. Now the question is whether Ardia's institutions will listen to voices that have guarded this land since before we built our first cities — or whether we will let them fall silent too, because their testimony is inconvenient for powerful interests. I will be at Magistrate Thornwood's hearing. I will record every word. And I will keep writing until someone with the authority to stop this chooses to act.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("environment-20260322161608");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

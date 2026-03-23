@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Four dead officials in a fortnight is not coincidence. It is evidence of guilt being buried alongside the witnesses." />
   <meta name="twitter:image" content="../images/generated/editorial-20260323101053.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -70,6 +71,9 @@
 <p>For forty years, the Crown Reserve operated without independent oversight. For forty years, successive Councils declined to ask what happened behind those vault doors. The men and women who requested audits found their proposals tabled, their concerns dismissed, their careers quietly redirected. Maren Ashworth asked the right questions and vanished. Mirela Ashford organized the evidence and died in a warded room. Now the officers who knew how the vaults actually functioned are dying faster than our reporters can document their names. Whoever emptied the Crown's treasury is methodically eliminating everyone who understood how it was done.</p>
 
 <p>The Chronicle has witnessed worse crises than this. We have covered wars and magical catastrophes and the fall of regimes. But I have never seen institutional betrayal so comprehensive or so ruthless in its enforcement. The missing gold is not the disease — it is the symptom. The disease is a generation of officials who believed themselves beyond accountability, who treated the public trust as their personal treasury, and who now murder to preserve their secrets. High Regent Marcen must act with the authority her office provides. The Grand Council must convene not in partisan theater but in genuine reckoning. And the citizens of Ardia must understand what this moment demands: not patience, not faith in process, but the fierce insistence that those who stole from us answer for it before anyone else dies protecting their crimes.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -156,6 +160,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("editorial-20260323101053");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

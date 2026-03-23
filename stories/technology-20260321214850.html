@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Revolutionary magitech could transform battlefield survival rates. Critics warn of unknown long-term effects on wearers." />
   <meta name="twitter:image" content="../images/generated/technology-20260321214850.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>Not everyone shares the enthusiasm. The Mages' Ethical Council has requested an immediate review of the technology, citing concerns about prolonged crystal contact with human flesh. "Memory crystals were designed to store information, not bond with living wearers," warned Councillor Ysmira Thorn in a written statement. "We do not yet understand what happens when these objects spend months pressed against skin, absorbing not just damage patterns but potentially thoughts and emotions."</p>
 
 <p>Brightforge dismissed such worries as "overcautious speculation" and announced that field trials with volunteer soldiers will begin within two months. Meanwhile, her team is already working on a second application: self-repairing castle walls that could render siege warfare obsolete. For now, the single prototype remains locked within the Foundry's warded vaults — though this reporter noticed at least three hooded figures sketching the armor's crystal placement with suspicious intensity before security escorted them out.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("technology-20260321214850");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

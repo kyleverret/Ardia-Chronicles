@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="City Watch seizes contraband enchanted weapons and arrests twelve suspects in predawn operation along the Serpent's Reach harbor district." />
   <meta name="twitter:image" content="../images/generated/crime-20260321214723.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>This reporter has learned that the Watch is now working with the Harbormaster's Office to review shipping records from the past eighteen months, searching for other vessels that may have carried contraband into the city. The investigation has reportedly drawn interest from the Crown's intelligence services as well, given the political sensitivities surrounding any Vanthorn resurgence. For the people of Praxis, already unsettled by the recent Shadowveil Crisis, news of cursed weapons flowing through their docks will do little to ease troubled minds.</p>
 
 <p>Anyone with information regarding suspicious activity along the Serpent's Reach waterfront is encouraged to contact the Watch's tip line at the Eastgate Station. As always, this reporter's sources remain protected. The shadows keep their secrets — but they share them with me first.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("crime-20260321214723");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Brother Aldric Fenmore was the sole temple official with clearance to authenticate withdrawal signatures. His death leaves no living witness to the verification process." />
   <meta name="twitter:image" content="../images/generated/investigation-20260323115710.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>With Fenmore's death, the chain of witness linking the Crown Reserve's physical vault procedures to the temple's authentication records has been severed entirely. Watch Commander Blackshore, who oversaw vault security, is dead. The Crown Physician's secretary, who maintained his private payment ledgers, is dead. Now the man who could have testified whether the original verifications were genuine or compromised has joined them. Someone is systematically eliminating everyone capable of explaining how 340,000 gold sovereigns vanished from accounts that multiple institutions swore were properly safeguarded.</p>
 
 <p>I asked Temple Magistrate Ashwood whether he had arranged protection for other temple officials involved in the treasury investigation. He declined to answer directly, but his hands were shaking when he sealed the interview chamber behind me.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("investigation-20260323115710");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

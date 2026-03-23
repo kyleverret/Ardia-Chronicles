@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Secret network offers safe studios and stipends to performers denied work after Conservatory purge. Founding members risk charges of sedition." />
   <meta name="twitter:image" content="../images/generated/culture-20260322161221.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>What strikes me most, having spent an evening among these artists, is not their anger but their discipline. They are documenting everything: the canceled grants, the revoked positions, the loyalty oaths that respected musicians refused to sign. They are building an archive of what is being lost while simultaneously creating the work that replacement. A young playwright named Soren Ashvale showed me three scenes from a new piece about the witness sanctuary at the Temple of the Radiant Dawn — a story the licensed theaters will never touch. "Art that can't tell the truth isn't art," he said simply. "It's furniture."</p>
 
 <p>I have covered Praxis's cultural community for eleven years, through funding droughts and aesthetic feuds and the occasional spectacular ego collision. I have never seen anything like this — creators choosing danger over silence, building something real in the spaces where official culture has chosen to look away. The Unwritten is small, fragile, and operating in genuine legal peril. But it exists. And as long as it exists, the people trying to reduce Ardian art to comfortable obedience will have failed. I will be watching — not as a critic this time, but as a witness.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("culture-20260322161221");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

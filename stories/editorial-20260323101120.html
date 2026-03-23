@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="When ancient mother-trees uproot themselves and walk away, the time for bureaucratic caution has passed." />
   <meta name="twitter:image" content="../images/generated/editorial-20260323101120.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -72,6 +73,9 @@
 <p>We at the Chronicle have reported on each of these stories as separate threads — the ley-line disruptions, the dying forests, the miners who refuse to descend into shafts that feel wrong. But the mother-trees have connected them for us in the most ancient language there is: flight. When the oldest living things in Ardia choose to abandon the ground that has held them for centuries, that is not a story for the environment beat alone. That is a warning to every soul in this realm.</p>
 
 <p>The Grand Council walked out of emergency session yesterday over budget disagreements. Temple auditors count missing gold. The Banking Guild investigates forged signatures. All of it matters — corruption must be exposed, criminals must face justice, institutions must be held accountable. But none of it will matter if we ignore what the trees already know. Something is coming. Something the forest elders cannot name and the mother-trees will not face. We owe it to ourselves, and to every generation that will inherit whatever we leave behind, to find out what it is before the choice to stand and fight is taken from us entirely.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -158,6 +162,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("editorial-20260323101120");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

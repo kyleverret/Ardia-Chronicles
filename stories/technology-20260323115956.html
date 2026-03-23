@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Self-repairing automaton's growing diagnostic database reveals identical hidden kill-switches installed by different licensed repair shops." />
   <meta name="twitter:image" content="../images/generated/technology-20260323115956.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The implications extend far beyond inconvenienced automaton owners. Crystal power core failures don't just disable devices — they release stored ley-line energy in uncontrolled bursts. Forty-three simultaneous failures across a concentrated urban area could cause cascading damage to nearby magitech infrastructure, including the ArcLight street lamp grid and the runescript relay stations that connect Praxis to the rest of the realm. Whether this represents sabotage-for-profit, deliberate infrastructure warfare, or something worse remains unclear. What is clear is that a single unauthorized automaton with an unusually persistent sense of purpose has uncovered a threat that the entire licensed repair industry apparently missed — or chose not to see.</p>
 
 <p>Seven, for its part, has begun compiling what Ashford reluctantly describes as 'a prioritized intervention list.' When I asked whether she intended to constrain the automaton's increasingly independent behavior, she looked at the growing pile of extracted kill-switches on her workbench and shrugged. 'Honestly? Seven's been right about everything so far. At this point, I'm mostly just trying to keep up.'</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("technology-20260323115956");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Mirela Ashford's body discovered among documents she had organized for Magistrate Thornwood. Archive's protective wards showed no breach." />
   <meta name="twitter:image" content="../images/generated/crime-20260322161455.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>Magistrate Thornwood issued a brief statement this afternoon, her first public remarks since granting sanctuary to the witnesses. "Mirela Ashford dedicated her life to ensuring that truth could be preserved and found when justice required it," she said. "I will not permit her work to have been in vain." The Magistrate has requested temple healers examine Ashford's remains rather than the city's medical examiner — the same office that certified Thornwell's death as natural. High Priestess Alara Dawnmere has agreed. Whatever the healers find, I suspect it will not match Captain Blackwood's preliminary assessment.</p>
 
 <p>The Vanthorn witnesses are scheduled to testify in six days. Someone is killing everyone who can illuminate the full scope of this conspiracy, and they are doing so with apparent impunity inside the very institutions meant to deliver justice. I knew Mirela Ashford. She helped me locate sealed case files on three separate occasions over the years, always following proper procedure, always insisting that the public's right to understand their courts mattered. She deserved better than to die alone in a room full of evidence that someone desperately wants to remain unexplained. I intend to explain it anyway.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("crime-20260322161455");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

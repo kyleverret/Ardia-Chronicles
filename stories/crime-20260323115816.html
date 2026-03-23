@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Documents reveal the unit meant to root out Watch corruption was itself compromised. Three officers have fled Praxis." />
   <meta name="twitter:image" content="../images/generated/crime-20260323115816.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The Obsidian Ring has operated in Praxis for at least two decades, running protection schemes, smuggling operations, and — as recent reporting has suggested — financial fraud networks that may connect to the shell companies under investigation in the Crown Reserve scandal. Their ability to compromise the very unit designed to catch corrupted officers represents a level of institutional penetration that should alarm every citizen who relies on the Watch for protection. High Regent Marcen's office issued a brief statement calling the situation 'deeply troubling' and promising 'a full accounting,' but offered no specifics on how oversight of the Watch will function while a replacement structure is established.</p>
 
 <p>I have spent six years at the Chronicle building sources inside the criminal networks of this city. The Obsidian Ring does not make contracts lightly, and they do not make contracts with people who cannot deliver value. Caelum Vex was not a minor figure — he controlled which investigations went forward and which quietly died. The question we must now ask is not simply how many cases he buried, but who else in positions of authority carries similar contracts in their quarters, waiting to be discovered only after the damage is done.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("crime-20260323115816");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

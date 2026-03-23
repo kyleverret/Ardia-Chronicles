@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Exchange officials estimate up to 40,000 cells may be affected. Merchants' Guild demands immediate investigation into certification fraud." />
   <meta name="twitter:image" content="../images/generated/economy-20260323115851.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The timing is deeply troubling. With legitimate Greyward production already disrupted by ley-line instabilities, crystal prices had risen 28 percent since Frosthold. That price spike created precisely the conditions in which counterfeit goods thrive — high demand, limited supply, and desperate buyers willing to overlook irregularities. I have traced the vault storage records for the suspect cells back through three separate trading houses, all of which received investment within the past eighteen months from Ardian Futures Holdings, the shell company now at the center of the Crown Reserve investigation. When I presented this connection to Director Stonehammer, he said only, "The pattern you're describing would suggest coordination beyond anything we've seen in my thirty years on this Exchange."</p>
 
 <p>Merchants' Guild President Aldra Copperhand has called for an emergency session tomorrow to demand full disclosure of every power cell that passed through bonded storage in the past two years — a logistical undertaking that could take months and cost thousands of crowns. Meanwhile, the small traders and shop owners who bought cells in good faith now face an impossible choice: use inventory that might be dangerous, or absorb losses they cannot afford. "I have twelve cells I purchased last month for my bakery's heating array," said Millicent Ashford, whose shop on Silver Street has used crystal-powered ovens for a decade. "Are they going to explode? Are they worthless? No one can tell me." The Exchange has provided no timeline for resuming trading, and until the scope of the counterfeiting operation is known, the crystal market — and every business that depends on it — remains frozen in uncertainty.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("economy-20260323115851");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

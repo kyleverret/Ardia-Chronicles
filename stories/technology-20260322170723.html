@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Kira Ashford's creation apparently liberated malfunctioning automatons from three separate guild-licensed repair shops. It also fixed them." />
   <meta name="twitter:image" content="../images/generated/technology-20260322170723.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The owners of the three repair shops are demanding the guild take action, though their complaints have grown notably quieter since my Academy contact's preliminary assessment confirmed that the devices in their care were indeed being improperly maintained — a violation that carries its own penalties. Meanwhile, the families who own the rescued automatons have begun arriving at Ashford's workshop, not to reclaim their property but to ask if Seven can check their other devices too. Ashford is charging them nothing, though several have left coins anyway.</p>
 
 <p>I asked Ashford what she plans to do next, given that her creation has now demonstrated not just self-repair capability but independent judgment about when other machines need help. She was quiet for a long moment, watching Seven sort through its newly expanded spare parts collection. "I think I need to have a conversation with it about boundaries," she finally said. "Though honestly? The guild should probably be more worried about what happens when it decides their whole licensing system is the thing that's broken." Seven, as if on cue, rotated its optical sensors toward me — and I could have sworn the thing was waiting to see if I'd quote that.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("technology-20260322170723");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

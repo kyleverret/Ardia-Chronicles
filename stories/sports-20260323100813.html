@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Emberveil, Praxis Falcons, and Ironkeep Sentinels discover cut safety straps in coordinated attack. League officials suspect betting syndicate involvement." />
   <meta name="twitter:image" content="../images/generated/sports-20260323100813.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>I've covered dragonriding for a decade, and I've seen equipment failures end careers. Kira Stormwell's collapse during the exhibition match three weeks ago — caused by sabotaged feed crystals — proved that someone was willing to endanger riders for advantage. This escalation suggests they're willing to kill. Championship-level dives routinely exceed two hundred feet; a harness failure at that height, at competition speed, would be unsurvivable for rider and mount alike. Whoever cut those straps knew exactly what they were doing.</p>
 
 <p>The League has requested Grand Army security assistance for all remaining championship events, a request Commissioner Brightforge says was approved within the hour by High Regent Marcen's office. Meanwhile, the riders themselves are demanding answers. "We risk our lives every time we fly," Praxis Falcons captain Aldric Vane told me, his voice steady but his hands white-knuckled around his dragon's bridle. "We accept that. What we don't accept is someone turning our sport into an execution." I will be at the League's emergency session this morning. Someone is betting on murder, and I intend to find out who's collecting.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("sports-20260323100813");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Lord Commander Drath accuses High Regent Marcen of 'disarming Ardia while the enemy sharpens its blades.' Reform Coalition calls walkout 'theater.'" />
   <meta name="twitter:image" content="../images/generated/politics-20260323100522.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The political mathematics are stark. Without the Expansionist bloc, the Council cannot achieve quorum. Without quorum, no legislation passes — including the emergency provisions that would extend Ironkeep's supply contracts past Bloomtide. Three of my sources within what I call the Quorum confirm that backroom negotiations have already begun, though they disagree on whether Marcen will yield on the spending freeze or whether Drath will accept a compromise that preserves the audit's integrity. One source, who has served in Council chambers longer than I have covered them, offered a grimmer assessment: "They're not negotiating. They're choosing sides."</p>
 
 <p>I have watched this Council fracture before — over the Shadow Legion Treaty, over Regent Vayne's resignation, over the Greyward Crisis. Each time, the institution found its footing. Each time, someone blinked. But I have never seen a Lord Commander walk out of a military appropriations session while his forces hold a contested frontier. Something has shifted in the balance of power in Praxis, and I am no longer certain the center will hold. The missing gold, the frozen accounts, the fled councillor — they are symptoms of a deeper rot. Yesterday's walkout was not theater. It was a declaration. The question now is what comes next, and whether anyone in that chamber truly knows the answer.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("politics-20260323100522");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

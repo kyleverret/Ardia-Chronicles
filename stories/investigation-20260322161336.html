@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Lyra Ashford, 34, discovered in her locked apartment with signs of shadowbind venom. She held the keys to Dr. Aldric Vane's private appointment ledgers." />
   <meta name="twitter:image" content="../images/generated/investigation-20260322161336.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>I have spent fourteen years at this newspaper learning to follow evidence rather than speculation. The evidence now points in a direction I approach with full awareness of its implications. Crown Physician Aldric Vane has served three successive monarchs. He has treated every member of the royal family for two decades. His signature appears on death certificates that closed investigations into the very nobles whose reform efforts threatened entrenched interests. And every person who could testify to his private activities is now dead, missing, or hiding behind sacred wards. I requested an interview with Dr. Vane through official palace channels this morning. I was informed he is "unavailable for the foreseeable future" and that further inquiries should be directed to the Crown's legal counsel. I have noted the response. I have not ceased my inquiries.</p>
 
 <p>Lyra Ashford left behind a sister in the Riverside District and a small grey cat that was found beside her body, refusing to leave. The sister, when I spoke with her briefly, asked me only one question: "Will anyone remember that she tried to do the right thing?" I told her I would make certain of it. The records Ashford kept may be gone, but the appointments happened. The patients existed. The payments were made. Somewhere in Praxis, there are other people who know what the Crown Physician did behind closed doors — people who have not yet been found by whoever is conducting this systematic elimination of witnesses. I intend to reach them first.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("investigation-20260322161336");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

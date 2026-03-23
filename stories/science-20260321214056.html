@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Discovery could revolutionize long-distance spell-casting and reignite territorial disputes dormant since the Treaty of Silver Ash." />
   <meta name="twitter:image" content="../images/generated/science-20260321214056.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>For ordinary citizens, the implications may prove more practical than political. Master Artificer Yenna Copperwright of the Guild of Applied Enchantments suggested that properly harnessed, the new ley line could reduce the cost of long-distance communication spells by as much as sixty percent. "Imagine a merchant in Thornwall speaking directly with suppliers in Crystalpine for a few copper coins rather than a silver mark," she told this correspondent. "This could transform commerce across the realm."</p>
 
 <p>The Royal Council has scheduled a special session next week to address both the scientific and diplomatic ramifications of the discovery. Director Coldwell's team will continue mapping the ley line's precise course, though she cautioned that complete surveys may take several months. This correspondent will follow developments closely as Ardia grapples with a discovery that may reshape both our understanding of magic and the political landscape of our realm.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("science-20260321214056");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

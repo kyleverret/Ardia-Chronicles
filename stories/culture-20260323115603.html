@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="The author of 'The Empty Throne' arrived by river barge yesterday. Artists are already gathering at the Riverside Quarter." />
   <meta name="twitter:image" content="../images/generated/culture-20260323115603.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The underground collective that has been sheltering blacklisted creators since Thawbreak has already offered Ashwell sanctuary, though he declined to reveal where he would be staying. My friend Elia Voss, whose resignation from the Grand Theater's directorship sparked this entire crisis, sent word through intermediaries that she intends to meet with Ashwell before week's end. I suspect their conversation will concern more than reminiscence — Voss has been quietly organizing something in the weeks since her departure, and Ashwell's return may be the catalyst she was waiting for.</p>
 
 <p>I have covered the arts in this city for eleven years, and I have never seen anything quite like what is building in the Riverside Quarter. The Crown's attempt to silence dissenting voices through loyalty oaths and funding cuts has accomplished the opposite of its intention: it has unified artists across every discipline, from opera singers to street puppeteers, into something that increasingly resembles a movement. Varyn Ashwell did not return to Praxis to hide. He returned to be seen. And judging by the faces in that crowd last night — faces I recognized from galleries, concert halls, and theatrical productions across this city — he will not be standing alone.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("culture-20260323115603");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

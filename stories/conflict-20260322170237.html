@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Medics treating casualties from last week's Ashenmoor engagement discover matching blade patterns suggesting single weapon source." />
   <meta name="twitter:image" content="../images/generated/conflict-20260322170237.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>Three sergeants I trust told me, separately, that similar wound patterns appeared on casualties from the Thornwall engagement earlier this month — casualties from both armies. The reports were filed. Nothing came of them. When I requested access to those medical records through official channels, I was informed they had been classified under the Shadow Frontier Military Authorization Act's emergency provisions. The same act currently being debated in the Grand Council. The same act Lord Commander Severin Drath insists will give the military the tools it needs to end this conflict.</p>
 
 <p>I am not suggesting conspiracy. I am stating facts: someone or something is killing soldiers on both sides of this war with the same weapon, and the people with authority to investigate have chosen instead to hide the evidence. The medics at Forward Station Twelve deserve answers. The families of the dead deserve truth. I intend to find both.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("conflict-20260322170237");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

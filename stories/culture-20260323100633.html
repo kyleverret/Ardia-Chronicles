@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Three hundred musicians performed without sound for two hours. The audience wept anyway." />
   <meta name="twitter:image" content="../images/generated/culture-20260323100633.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The performance has already sparked responses across Praxis's artistic community. Elia Voss, the former Grand Theater director who resigned last month over "impossible conditions," attended and was seen embracing Moonbridge afterward. The underground artist collective that emerged following the Crown's loyalty requirements has offered the dismissed faculty positions teaching in their hidden workshop spaces. And this morning, the Patron's Council — which quietly cancelled grants for three theater companies critical of Crown policy just weeks ago — issued an unusual statement acknowledging "the profound artistic statement made by Conservatory students" without explicitly condemning or endorsing it.</p>
 
 <p>I have written about arts funding being redirected toward politically convenient voices. I have documented the slow constriction of creative freedom in Praxis over recent months. But last night crystallized something I had only sensed before: the Crown's cultural appointees have fundamentally misunderstood what they are trying to control. You cannot silence artists by taking their platforms. They will simply transform silence itself into their instrument. The students of the Praxis Conservatory performed a symphony without sound, and somehow it was the most defiant music I have ever not heard. When I left Ember Hall, my hands ached from applause that made no noise. I have never felt more certain that the arts in Ardia will survive whatever is coming — and that those trying to suppress them have already lost.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("culture-20260323100633");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

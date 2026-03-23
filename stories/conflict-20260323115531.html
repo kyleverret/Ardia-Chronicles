@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Three separate groups crossing Grand Council lines describe identical purges. Field medics confirm wounds consistent with close-range execution." />
   <meta name="twitter:image" content="../images/generated/conflict-20260323115531.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The deserters describe a new commander who arrived at Shadow Legion forward positions approximately two months ago — a figure none of them have seen clearly, who issues orders through intermediaries and who has systematically replaced experienced officers with what Varn called 'the quiet ones.' When I asked what that meant, another deserter, a younger man with a fresh burn scar across his neck, answered instead. 'They do not blink right. They do not sleep. And when they speak, sometimes their mouths move before the words come, like they are remembering how to talk.'</p>
 
 <p>I have covered the Shadow Legion conflict since its beginning. I have interviewed prisoners, documented battlefield conditions, and reported on the strange synchronicities that have emerged among captured soldiers. But this is the first time I have seen Legion troops willing to die crossing open ground rather than remain with their own forces. Whatever is happening on the other side of that frontier, the soldiers who lived it believe death at Grand Council hands is preferable to remaining under their new command. That should concern everyone responsible for deciding how this war ends.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("conflict-20260323115531");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

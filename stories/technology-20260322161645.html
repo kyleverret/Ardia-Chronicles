@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Young artificer's creation fixes its own damaged limb in crowded market square. Guild officials scramble to determine if existing regulations even apply." />
   <meta name="twitter:image" content="../images/generated/technology-20260322161645.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The timing here matters. Three days ago, the Collective released Tessa Brightforge's healing resonator to the public after evidence proved the guild had suppressed it. Now another young, uncertified artificer has demonstrated a genuine breakthrough — one she developed specifically because guild barriers kept her outside the official system. I asked Ashford whether she'd considered submitting her work through proper channels before yesterday's demonstration. "I tried," she said. "Twice. They returned my applications unreviewed because I couldn't pay the evaluation deposit." The Artificers' Guild charges forty silver marks for prototype assessment. Ashford makes twelve marks a week repairing household runescripts.</p>
 
 <p>I'm going to be following this story closely, partly because self-repairing automatons could transform everything from mining to medicine, and partly because Kira Ashford represents something the guild doesn't seem to understand: the barriers they've built to protect quality are also walls that keep out brilliance. The machine is currently secured in Ashford's workshop under Watch supervision while the guild debates jurisdiction. It has, according to Ashford, already begun optimizing its spare parts storage system without being asked. Whatever regulations eventually apply to this technology, they'd better be written quickly. The machine isn't waiting for permission to improve.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("technology-20260322161645");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

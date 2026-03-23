@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Temple auditors tracing 340,000 missing sovereigns discover Ardian Futures Holdings also processed fees for Dr. Aldric Vanthorn's 'private consultations.'" />
   <meta name="twitter:image" content="../images/generated/investigation-20260323100742.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The fourteen Council members who received payments from Ardian Futures Holdings include three who sat on the committee that approved Dr. Vanthorn's appointment as Crown Physician in Year 842 AP. Their votes were unanimous. The previous Crown Physician, Dr. Helena Ashford, had resigned abruptly after requesting an independent audit of royal household medical expenditures — a request that was denied. Dr. Ashford died of an apparent illness seven months later. Her death was not investigated. I am requesting her medical records this morning.</p>
 
 <p>Someone has been killing the people who asked questions about Ardia's finances. That same someone has been paying the Crown's own physician through channels now linked to the largest theft in the realm's history. The connection is no longer theoretical. I have names, dates, and amounts. What remains is to establish who authorized these payments — and whether the person treating the High Regent's own household has been operating as an assassin with a royal appointment. I will have answers before Dr. Vanthorn reaches whatever border he is running toward.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("investigation-20260323100742");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

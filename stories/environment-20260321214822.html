@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Forest spirits mobilize for first time in two centuries as magical blaze spreads from abandoned alchemist outpost." />
   <meta name="twitter:image" content="../images/generated/environment-20260321214822.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>Perhaps most remarkable is the awakening of the warden trees themselves. These semi-sentient giants were planted by elven naturemancers during the Age of Accord to serve as guardians against exactly such catastrophes. Through my communion with the spirits this morning, I learned that the trees are preparing to create a living firebreak — sacrificing younger growth at the wetland's edge to save the deeper marsh. It is a desperate measure that speaks to the severity of this crisis.</p>
 
 <p>The Grand Council has dispatched a team of elemental specialists from the capital, expected to arrive by griffin courier tomorrow. Until then, the fate of one of Ardia's most vital ecosystems hangs in the balance. This correspondent will remain on the ground to report further developments. Citizens wishing to volunteer should contact their local ranger station — but be warned, magical fire respects no boundaries and shows mercy to none.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("environment-20260321214822");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

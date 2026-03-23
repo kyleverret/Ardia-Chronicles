@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Valdris Crane steps down hours after Chronicle investigation reveals coordinated betting patterns across four consecutive tournaments." />
   <meta name="twitter:image" content="../images/generated/sports-20260322161413.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The Tournament Authority has appointed Deputy Adjudicator Sera Moonvale as interim chief and suspended all ranked competition until an independent audit of the past four tournaments can be completed. That audit will take months. It will uncover things that powerful people would prefer remain hidden. I know this because I have already glimpsed the edges of what lies beneath — names connected to the crystal speculation scandal, to the guild manipulation that buried Tessa Brightforge's healing resonator, to a pattern of coordinated corruption that treats Ardia's institutions as profit engines rather than public trusts.</p>
 
 <p>I started covering sports because I believed competition revealed something true about character — that when everything was on the line, you saw who people really were. I still believe that. And what the Grand Mage Duels have revealed, under scrutiny, is that somewhere along the way we allowed people without honor to convince us they were its guardians. Valdris Crane is gone. But the system that let him operate for eleven years without meaningful oversight remains, and I intend to keep asking uncomfortable questions until it changes. The athletes who dedicate their lives to these competitions deserve nothing less.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("sports-20260322161413");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

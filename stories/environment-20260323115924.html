@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Forest Warden Guild confirms magical network collapse follows exact path of fleeing grove-anchors. Border settlements report wells running dry." />
   <meta name="twitter:image" content="../images/generated/environment-20260323115924.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>I have submitted formal inquiries to both the Ironvein Mining Consortium and the Grand Council's Land and Resources Committee requesting comment on the nexus collapse and the documented connection between the Mother-Trees' path and the spreading zone of magical silence. Neither has responded. The Arcane Academy's ley-line monitoring division has classified all data from the Thornwood region as "pending verification" — the same classification they applied to early Greyward anomaly readings that took eighteen months to acknowledge publicly.</p>
 
 <p>The walking Mother-Trees continue south at their steady pace of one hundred yards per day. Behind them, they leave a trail that my training can only describe as absence — not corruption, not the active wrongness of the Breathing Ground, but simply emptiness where connection should exist. I have covered the natural world for seven years, and I have never felt the land refuse to speak to me until now. Whatever is happening beneath Ardia's surface, the oldest and wisest living things in our realm have made their judgment clear. They are leaving. The question the Grand Council seems unwilling to ask is whether the rest of us will have anywhere to go when we finally understand why.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("environment-20260323115924");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

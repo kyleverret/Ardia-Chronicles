@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Whistleblower risks everything to reveal millions in diverted crown funds meant for orphanages and veteran hospitals." />
   <meta name="twitter:image" content="../" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>Thornwood has been placed under protective custody by the Order of the Silver Shield following two apparent break-in attempts at her boarding house. She told me she understood the risks when she first reached out to The Chronicle through an intermediary. "My grandmother died in a veterans' hospital that couldn't afford healing potions," she said, her voice steady despite trembling hands. "That money was stolen from people like her. Someone had to speak." Duke Valdren's office has issued a statement calling the allegations "baseless and politically motivated," but has not addressed the specific documents now in Crown custody.</p>
 
 <p>The Chronicle will continue following this story as it develops. Citizens with information regarding treasury irregularities may contact this reporter through the usual secure channels. As always, sources will be protected.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("investigation-20260321214127");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

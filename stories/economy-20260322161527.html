@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Leaked documents show fourteen Council members received monthly stipends from shell company linked to frozen magitech firms." />
   <meta name="twitter:image" content="../images/generated/economy-20260322161527.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>I contacted all fourteen named officials before publication. Eleven declined to respond. Two claimed the documents were forgeries, though neither would submit to a verification interview. Councilor Pemberton's office issued a three-sentence statement calling my inquiry "economically illiterate speculation" — words I find professionally irritating from a man whose signature is clearly visible on seventeen separate payment acknowledgments.</p>
 
 <p>What troubles me most is the timing. These payments coincide precisely with Council votes that relaxed oversight of magitech investment, expanded crystal export permits, and — most significantly — delayed mandatory audits of the Crown Reserve Vaults that Councilor Ashworth was investigating when she disappeared. I cannot yet prove that her vanishing is connected to these ledgers, but I can state with certainty that someone spent a great deal of money ensuring the treasury remained unexamined. The question I intend to answer next is simple: whose money was it, and what were they hiding in those vaults?</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("economy-20260322161527");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

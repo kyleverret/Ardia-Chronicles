@@ -1448,3 +1448,86 @@ a:hover {
   border: 2px solid var(--gold-dark);
   flex-shrink: 0;
 }
+
+/* ---- FACTION REACTIONS ---- */
+
+.faction-reactions {
+  margin: 28px 0 8px;
+  padding: 18px 0 4px;
+  border-top: 1px solid var(--paper-dark);
+}
+
+.faction-reactions-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.faction-reactions-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.faction-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--paper-mid);
+  border: 1px solid var(--paper-dark);
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  color: var(--ink);
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.faction-btn:hover {
+  background: var(--paper-dark);
+  border-color: var(--gold-dark);
+  transform: translateY(-1px);
+}
+
+.faction-btn.active {
+  background: var(--ink);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.faction-btn.active:hover {
+  background: #2e200a;
+}
+
+.faction-emoji {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.faction-name {
+  font-size: 0.75rem;
+}
+
+.faction-count {
+  font-size: 0.72rem;
+  font-weight: bold;
+  min-width: 1ch;
+  color: var(--gold-dark);
+}
+
+.faction-btn.active .faction-count {
+  color: var(--gold-light);
+}
+
+@media (max-width: 500px) {
+  .faction-reactions-btns { gap: 6px; }
+  .faction-btn { padding: 5px 10px; font-size: 0.73rem; }
+  .faction-name { display: none; }
+}

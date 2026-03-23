@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Miners describe soil that pulses, tools that corrode overnight, and a silence that follows them home. Company claims routine maintenance." />
   <meta name="twitter:image" content="../images/generated/environment-20260322170648.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The Ironvein Consortium operates under a royal charter that permits extraction activities without Grand Council environmental review — a privilege granted thirty-one years ago, before anyone understood what lay beneath the Thornback range. When I asked Banking Guild compliance officer Theron Ashford whether the Ardian Heritage Foundation's investment in Ironvein created any conflict with current investigations, he declined to comment but noted that "financial connections between frozen magitech firms and active mining operations would be deeply concerning if they existed." They exist. I have seen the records.</p>
 
 <p>Magistrate Thornwood's hearing on the forest spirits' testimony is scheduled for three days from now. Lord Velmeer's attorneys continue seeking to block it. Meanwhile, the Breathing Ground pulses in the Thornback Mountains, seventeen miners refuse to descend into shafts that feel wrong in ways their experience cannot explain, and the Greyward spreads. I have walked through dying forests and stood beside silenced stones. What I felt at Site Seven was different — not death, but something preparing to be born. The spirits warned us that someone was holding the knife. I believe I have found where they are cutting.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("environment-20260322170648");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

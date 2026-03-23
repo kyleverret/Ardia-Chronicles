@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Attack on sacred grounds marks first violation of Temple Covenant in over two centuries. High Priestess Alara Dawnmere demands Council emergency session." />
   <meta name="twitter:image" content="../images/generated/crime-20260322170535.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>Magistrate Thornwood issued a statement from an undisclosed location this morning, her first public communication since Mirela Ashford's death in the sealed archive room. "The prosecution of Marcus Vanthorn will proceed," she wrote. "The testimony of the surviving witnesses has been recorded under oath and preserved through temple protocols that predate the Grand Council itself. Those who believed they could silence this case by killing its witnesses have miscalculated." The statement did not address whether the remaining witnesses can recover sufficiently to appear in court. Temple sources tell me their prognosis is uncertain.</p>
 
 <p>Six people connected to the Vanthorn case are now dead. Three Watch officers involved in the original arrest have requested transfers to distant postings. The court clerk who understood how the evidence connected is gone. And now the temple sanctuary that should have been inviolable has been breached by something carrying Shadow Frontier signatures into the heart of Praxis. I have spent six years covering this city's criminal networks, and I have never seen an operation this bold, this coordinated, or this willing to cross lines that even the Obsidian Ring has historically respected. Someone is protecting the Vanthorn smuggling network with resources that exceed anything a river shipping operation should command. I intend to find out who — and I intend to publish their names before anyone else dies for knowing them.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("crime-20260322170535");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

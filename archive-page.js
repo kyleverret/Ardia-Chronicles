@@ -169,6 +169,12 @@
           <div class="byline-date">${escapeHtml(story.date)}</div>
         </div>
         <div class="story-body">${story.body}</div>
+        <div class="story-page-link-wrap">
+          <a href="stories/${escapeHtml(story.id)}.html" class="story-page-link" target="_blank">
+            Open full story page &rarr;
+          </a>
+        </div>
+        ${typeof ardia_renderFactionReactions === "function" ? ardia_renderFactionReactions(story.id) : ""}
         <div class="reporter-bio-footer">
           <div class="bio-avatar" style="background-color:${escapeHtml(repColor)};">${escapeHtml(repAvatar)}</div>
           <div class="bio-content">
@@ -222,6 +228,7 @@
 
     // Story row clicks (delegated)
     document.getElementById("archive-list").addEventListener("click", function (e) {
+      if (e.target.closest(".faction-btn")) return;
       const item = e.target.closest("[data-story-id]");
       if (item) openModal(item.dataset.storyId);
     });
@@ -251,6 +258,7 @@
     setCurrentDate();
     populateReporterFilter();
     attachEvents();
+    if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
     fetch("archive.json")
       .then((r) => r.json())

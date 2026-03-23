@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Historic 7-4 decision ends eighteen months of expanded magical authority. Theron vows to respect ruling despite 'grave concerns.'" />
   <meta name="twitter:image" content="../images/generated/politics-20260321213924.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The vote represents a significant victory for the Reform Coalition, a bloc of younger council members who have argued that Theron's expanded powers set a dangerous precedent. Councilor Javen Whitmore, the coalition's most vocal member, told the Chronicle that the decision "restores the sacred covenant between those who govern and those who are governed." However, military voices have expressed alarm, with Commander Sera Ironhelm of the Queen's Guard warning that the realm's magical defenses may be weakened during a vulnerable period.</p>
 
 <p>Queen Valeria III has not yet commented publicly on the ruling, though palace sources indicate she will address the matter during tomorrow's Unity Day celebrations in the capital. Political observers across Ardia will be watching closely, as this decision may reshape the balance of power between the Crown, Council, and Archmage's office for generations to come.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("politics-20260321213924");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

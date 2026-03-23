@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Documents obtained by the Chronicle show seventeen financial examiners died under suspicious circumstances over two decades. None received full investigation." />
   <meta name="twitter:image" content="../images/generated/investigation-20260322170419.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The Crown Reserve Vaults — the same facilities that vanished Councilor Maren Ashworth was investigating before her disappearance — have not undergone a complete independent audit since Year 822 AP. Every auditor assigned to conduct one has either died, resigned citing personal reasons, or been reassigned to different duties. The Treasury Division declined to comment on personnel matters. The High Regent's office referred my questions to the Grand Council's finance committee, whose chair, Councilor Aldric Pemberton, is among the fourteen officials identified in Elara Sunforge's recent reporting as receiving unexplained payments from entities connected to the crystal stockpiling scandal.</p>
 
 <p>I do not yet know what those vaults contain that justifies two decades of dead auditors and sealed case files. I do know that Councilor Ashworth was asking the same questions when she vanished, that Mirela Ashford died with documents that might have answered them, and that someone with considerable authority has worked very hard to ensure those answers stay buried. I will continue this investigation. The dead deserve that much. So does everyone who trusts that our institutions serve the public rather than those with the power to make inconvenient people disappear.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("investigation-20260322170419");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

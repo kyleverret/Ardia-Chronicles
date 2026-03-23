@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Forest wardens report three grove-anchors have uprooted themselves. Elven territorial elders say the trees are fleeing something they cannot name." />
   <meta name="twitter:image" content="../images/generated/environment-20260323100954.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>I followed Grandmother Ashwind's trail for nearly a mile yesterday afternoon, accompanied by three members of the Forest Warden's Guild. The path she left behind is not destruction — smaller trees and undergrowth appear unharmed — but the soil itself has changed. My warden's cord, which normally pulses faintly with natural resonance when I enter old-growth territory, went cold against my wrist. The magical signature of the land she walked across has been altered in ways my training cannot fully identify. It felt, I must report, like the Breathing Ground that Ironvein miners described at their abandoned Thornback sites. Not dead. Not alive. Waiting.</p>
 
 <p>The Grand Council's Land and Resources Committee has issued no statement on the walking Mother-Trees. Lord Castor Velmeer, whose Ironvein Mining Consortium the forest spirit elders blamed for the Greyward blight, has reportedly requested an emergency session to discuss "irrational panic over natural seasonal phenomena." I have covered the natural world for seven years. Trees that have stood for four millennia do not uproot themselves for seasonal reasons. When the oldest living witnesses to Ardia's history choose flight over remaining in soil they have anchored for longer than human memory extends, we should perhaps consider what they are running from — and whether we will have the option to follow.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("environment-20260323100954");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

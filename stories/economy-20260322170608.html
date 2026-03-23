@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Temple auditors report 340,000 gold sovereigns missing from official tallies. Banking Guild demands immediate Council explanation." />
   <meta name="twitter:image" content="../images/generated/economy-20260322170608.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>High Regent Marcen issued a brief statement acknowledging the audit's preliminary findings and promising "full cooperation with judicial authorities." More telling was what she did not say: she did not defend the treasury officials whose signatures appear on the falsified records, and she did not name Councilor Aldric Pemberton when listing those she expects to assist the investigation. Pemberton, who refused the third signature on Ashworth's audit request, has not been seen at Council chambers since yesterday's count began. His office claims he is "reviewing documents at an undisclosed location." I have heard that phrase before. It rarely precedes a satisfactory explanation.</p>
 
 <p>I will be at the vaults when they open Chamber Four this morning. Somewhere in those records lies the answer to a question I have been asking since Councilor Ashworth vanished: who has been stealing from Ardia's treasury, and what have they been buying with our gold? The crystal markets, the frozen magitech firms, the secret payments — they are all threads of the same rope. Someone has been preparing for something expensive, and they have been funding it with money that belonged to every citizen of this realm. I intend to find out what.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("economy-20260322170608");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

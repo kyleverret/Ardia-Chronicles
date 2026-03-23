@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="The Crown Reserve discrepancy isn't a bookkeeping error — it's the price tag on systematic corruption at the highest levels of Ardian finance." />
   <meta name="twitter:image" content="../images/generated/editorial-20260322170748.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -72,6 +73,9 @@
 <p>The Banking Guild is demanding explanations from the Council. Here's mine, free of charge: you've been robbed. Not by some clever thief in the night, but by people who sit in chambers, collect salaries, and vote on your taxes. The same people who delayed mandatory audits, who refused to sign Ashworth's requests, who called financial scrutiny 'economically illiterate speculation.' Three hundred forty thousand sovereigns bought a lot of silence. Now the question is whether Ardia's remaining honest officials have the spine to find out who's been spending it.</p>
 
 <p>Temple auditors are still counting. I suspect the final number will be worse. When you let foxes guard the henhouse for forty years, don't act surprised when you run out of chickens.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -158,6 +162,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("editorial-20260322170748");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

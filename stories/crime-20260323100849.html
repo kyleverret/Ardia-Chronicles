@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Renna Blackshore was the fourth consecutive officer responsible for vault access to die under unexplained circumstances since audits began." />
   <meta name="twitter:image" content="../images/generated/crime-20260323100849.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>The Watch physician who examined Blackshore's body told me, off the record, that heart seizures do not typically cause the kind of facial expression he observed. "Terror," he said. "Absolute terror, frozen in place." He has requested an Arcane Academy examiner review the remains for evidence of magical interference. That request was denied by Acting Watch Captain Beren Ashford — no relation to the late Mirela Ashford — within two hours of being filed. When I asked Captain Ashford why he blocked a routine forensic examination, he declined to comment and suggested I "focus on matters within journalistic purview." I have been covering this city's dead for six years. This is precisely within my purview.</p>
 
 <p>Magistrate Thornwood has added Blackshore's death to her active investigation and issued preservation orders for all Palace District records. Fourteen Watch officers assigned to vault-adjacent duties have requested immediate transfers since yesterday's discovery; seven of those requests have already been approved. Someone is cleaning house before the auditors finish counting, and they are using methods that leave no obvious blade marks. I have begun compiling a list of every person with documented access to Crown Reserve security protocols who is still alive. It is a shorter list than it should be, and I intend to publish it before it gets any shorter.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("crime-20260323100849");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

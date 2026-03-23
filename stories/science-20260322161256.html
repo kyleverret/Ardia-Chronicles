@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Leaked internal documents reveal researchers identified anomalous readings months before Greyward emergence. Director claims data was 'under review.'" />
   <meta name="twitter:image" content="../images/generated/science-20260322161256.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>Director Vorn declined my interview request through his secretary, but issued a written statement defending the Academy's 'rigorous commitment to scientific accuracy over premature speculation.' He characterized the suppressed memoranda as 'preliminary findings requiring substantial refinement' and noted that the Academy 'cannot be held responsible for natural phenomena we did not create.' When I asked whether the Academy's silence had cost lives — whether the highland clans might have relocated earlier, whether the Circle of Thorns might have mobilized sooner — his office did not respond.</p>
 
 <p>What haunts me most is a passage from Fenworth's final suppressed memorandum, written just twelve days before the first Greyward sighting. He had mapped the drainage pattern to its apparent center: a point approximately forty leagues east of the Keldara Highlands, in a region his charts label only as 'the Thornmark Depths' — a name that appears in no Academy geography text I can locate. 'Something is there,' Fenworth wrote. 'Something is feeding.' I have submitted formal requests to the Academy's cartographic archives for any historical references to the Thornmark Depths. Those requests have been denied on grounds of 'archival preservation protocols.' I find myself wondering what else our premier institution of magical learning has decided we are not ready to know — and whether we will survive their caution long enough to find out.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("science-20260322161256");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

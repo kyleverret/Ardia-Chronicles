@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Narrowest margin in Council history exposes deep fractures in governing coalition. Opposition leaders demand immediate Vanthorn tribunal." />
   <meta name="twitter:image" content="../images/generated/politics-20260322161057.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>I sought comment from the Chancellor's chief of staff, Aldric Penn, with whom I have maintained a complicated professional relationship for the better part of a decade. He granted me ninety seconds in a corridor outside the Council's eastern entrance — ninety seconds more than he has given any other correspondent this week. "The Chancellor is focused on governance, not political theatre," Penn said, his face betraying nothing. When I asked whether Morcroft intended to address the Vanthorn negotiations directly, Penn's mask slipped for precisely one moment. "The Chancellor," he said carefully, "will address what he determines the public needs to know, when he determines they need to know it." I have known Aldric Penn for eleven years. I have never heard him speak with so little conviction.</p>
 
 <p>What troubles me most is not the Chancellor's survival, nor even the fractures now visible in a coalition that controlled comfortable majorities six months ago. What troubles me is the silence from the Council's institutional center — the veteran members who have weathered previous crises by building consensus across factional lines. Councillor Ashworth, who might have brokered compromise, has been missing for four days. Archivist Donal Fray, whose historical knowledge has guided Council deliberations for thirty years, declined my request for context yesterday for the first time in our long friendship. "Some things," he wrote in a brief note delivered by temple courier, "I am no longer certain I understand." The foundations are shifting, and those who built them cannot tell me where the cracks lead. I will be in the Council chambers when they reconvene tomorrow. I suspect I will be taking notes on history rather than politics.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("politics-20260322161057");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

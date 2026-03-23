@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="When forty-three automatons across Praxis carry identical sabotage, the question is not whether there was coordination—it is who gave the order." />
   <meta name="twitter:image" content="../images/generated/editorial-20260323120023.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -72,6 +73,9 @@
 <p>The Artificers' Guild Standards Committee acted correctly in suspending those three licenses. But three shops cannot install identical sabotage components in forty-three devices spread across a city. The components came from somewhere. The design came from someone. The installation instructions were distributed through some mechanism we have not yet identified. Until the guild—and Magistrate Thornwood's investigation—follows those kill-switches back to their origin, every automaton owner in Ardia should ask themselves a simple question: what else has been installed in the devices we trust with our homes, our businesses, our lives?</p>
 
 <p>Seven lacks the capacity for rhetoric, which may be why its evidence is so devastating. Machines do not editorialize. They record what is. And what is, according to forty-three separate diagnostic reports, is a coordinated sabotage operation hiding behind the credentials we created to protect us from exactly this threat. The guild must audit every licensed shop. The Council must investigate every Ardian Futures Holdings connection. And we must stop pretending that oversight systems staffed by the friends of those being overseen will ever catch the rot before it spreads.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -158,6 +162,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("editorial-20260323120023");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Sir Aldric Stonebridge becomes first defending champion to forfeit in tournament's 200-year history. Organizing committee launches immediate investigation." />
   <meta name="twitter:image" content="../images/generated/sports-20260322170458.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The pattern here is unmistakable, and it echoes something I have been tracking for months in a different arena entirely. The Grand Mage Duels — where Chief Adjudicator Brennan resigned just days ago amid evidence of systematic match manipulation — showed the same statistical fingerprints before the scandal broke: unexpected withdrawals, improbable upsets, champions performing far below their capabilities. Someone is corrupting Ardia's competitive tournaments, and they have now moved from magical dueling to the realm's most prestigious athletic event. My sources within the Ashfield Cup's financial office confirm that betting volume on this tournament exceeded last year's by over sixty percent, with unusually large wagers placed on specific upset outcomes in the forty-eight hours before competition began.</p>
 
 <p>I knew Aldric Stonebridge before he was a champion. I watched him train as a young knight, saw the dedication that carried him from a minor house to the silver medallion. He is not a coward. Whatever threat compelled him to walk away from glory was real enough to break a man who has never broken before. The Ashfield Cup organizing committee has requested assistance from Magistrate Thornwood's office — the same court currently sheltering witnesses in the Vanthorn smuggling case under temple sanctuary. Someone powerful enough to threaten champions' families, coordinate attacks across multiple competitors, and move massive sums through the betting markets is poisoning Ardian sport. I intend to find out who.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("sports-20260322170458");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

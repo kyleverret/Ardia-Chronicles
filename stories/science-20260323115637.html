@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Researchers confirm the anomaly beneath Greyward has begun traveling along deep ley-lines at seventeen miles per day. Academy Director refuses comment." />
   <meta name="twitter:image" content="../images/generated/science-20260323115637.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,9 @@
 <p>I visited the Academy's primary detection chamber yesterday evening, where I observed technicians working in shifts around equipment that has clearly not been powered down in days. Three separate monitoring crystals displayed the same pulsing red signature—larger than when I first reported on the Greyward anomaly, and unmistakably closer to the capital. When I asked the supervising technician whether emergency protocols had been activated, she asked me to leave and said nothing else. The Ley-Line Monitoring Division has requisitioned additional detection equipment from the Praxis municipal stores, according to procurement records filed with the Grand Council's Infrastructure Committee—equipment typically used only during major arcane emergencies.</p>
 
 <p>High Regent Marcen's office acknowledged receiving a briefing from Academy officials but declined to characterize its contents. The Grand Council's Emergency Preparedness Committee has scheduled a closed session for tomorrow morning—its first such meeting since the Shadow Legion's initial incursion in Year 844 AP. Whatever is moving beneath eastern Ardia, whatever drove the mother-trees to abandon soil they had anchored for millennia, it is coming here. And the people responsible for understanding it are either unable or unwilling to tell us what it is. I will continue reporting as information becomes available. Gerald, my luminous moss, has begun pulsing in a pattern I have never observed before. I do not know what that means. I suspect I will find out soon enough.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -160,6 +164,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("science-20260323115637");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

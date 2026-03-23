@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Hundreds gather for clandestine premiere of Caelum Ashgrove's 'The Empty Throne' — a work the Patron's Council ordered destroyed." />
   <meta name="twitter:image" content="../images/generated/culture-20260322170310.png" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../reactions.js"></script>
 </head>
 <body>
 
@@ -76,6 +77,9 @@
 <p>The underground collective that Oryn Duskfall reported on last week organized the performance, though they asked me not to identify specific members. They are already sheltering seventeen blacklisted artists; after Saturday, that number will surely grow as word spreads that resistance remains possible. The Patron's Council has not yet responded to requests for comment, though I expect they will claim jurisdiction they do not possess over art they cannot contain.</p>
 
 <p>Caelum Ashgrove once told me that art matters most precisely when powerful people want it silenced. He was right. His play exists now in the memories of three hundred witnesses, and in my notes, and in whatever copies survived the Council's purge. They cannot destroy what we have seen. They cannot unhear what we have heard. And if they imagine that darkness will make us forget beauty, they understand neither darkness nor beauty nor the stubborn, defiant hearts of artists who refuse to stop creating.</p></div>
+
+        <!-- FACTION REACTIONS -->
+        <div id="story-faction-reactions"></div>
 
         <!-- SOCIAL SHARING -->
         <div class="share-bar">
@@ -162,6 +166,13 @@
       var now = new Date();
       var el = document.getElementById("current-date");
       if (el) el.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + ", Year 847 AP";
+
+      // Faction reactions
+      var rxEl = document.getElementById("story-faction-reactions");
+      if (rxEl && typeof ardia_renderFactionReactions === "function") {
+        rxEl.innerHTML = ardia_renderFactionReactions("culture-20260322170310");
+      }
+      if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
 
       // Social sharing — build URLs using the actual page URL at runtime
       var pageUrl  = encodeURIComponent(window.location.href);

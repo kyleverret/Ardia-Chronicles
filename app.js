@@ -191,6 +191,8 @@
           </a>
         </div>
 
+        ${typeof ardia_renderFactionReactions === "function" ? ardia_renderFactionReactions(story.id) : ""}
+
         <div class="reporter-bio-footer">
           <div
             class="bio-avatar"
@@ -224,6 +226,9 @@
   function attachEvents() {
     // Story card clicks (delegated)
     document.addEventListener("click", function (e) {
+      // Faction reaction buttons are handled by reactions.js — skip here
+      if (e.target.closest(".faction-btn")) return;
+
       // Story card
       const card = e.target.closest("[data-story-id]");
       if (card) {
@@ -320,6 +325,7 @@
     renderAllStories("all");
     renderSidebarReporters();
     attachEvents();
+    if (typeof ardia_attachReactionEvents === "function") ardia_attachReactionEvents();
   }
 
   if (document.readyState === "loading") {

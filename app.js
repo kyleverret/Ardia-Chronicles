@@ -84,11 +84,17 @@
 
   // --- RENDER FEATURED SECTION ---
 
+  function latestEditionDate() {
+    // STORIES is newest-first, so the first entry has the most recent realDate
+    return STORIES.length > 0 ? STORIES[0].realDate : null;
+  }
+
   function renderFeaturedStories() {
     const grid = document.getElementById("featured-grid");
     if (!grid) return;
 
-    const featured = STORIES.filter((s) => s.featured);
+    const latest = latestEditionDate();
+    const featured = STORIES.filter((s) => s.featured && (!latest || s.realDate === latest));
     grid.innerHTML = featured.map((s) => renderStoryCard(s, "featured")).join("");
   }
 
@@ -101,9 +107,15 @@
     const grid = document.getElementById("stories-grid");
     if (!grid) return;
 
-    const stories = currentFilter === "all"
-      ? STORIES.filter((s) => !s.featured)
-      : STORIES.filter((s) => s.category === currentFilter);
+    let stories;
+    if (currentFilter === "all") {
+      // Front page shows only the latest edition
+      const latest = latestEditionDate();
+      stories = STORIES.filter((s) => !s.featured && (!latest || s.realDate === latest));
+    } else {
+      // Category filter: show all stories in that category across all editions
+      stories = STORIES.filter((s) => s.category === currentFilter);
+    }
 
     if (stories.length === 0) {
       grid.innerHTML = `<p class="no-results">No stories found in this category yet.</p>`;

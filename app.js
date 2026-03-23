@@ -8,7 +8,8 @@
   // --- HELPERS ---
 
   function getReporter(id) {
-    return REPORTERS.find((r) => r.id === id);
+    return REPORTERS.find((r) => r.id === id)
+      || (typeof EDITORIAL_BOARD !== "undefined" ? EDITORIAL_BOARD.find((m) => m.id === id) : null);
   }
 
   function getCategory(id) {
@@ -39,9 +40,8 @@
   // --- RENDER STORY CARD ---
 
   function renderStoryCard(story, size) {
-    const reporter = getReporter(story.reporter);
-    const category = getCategory(story.category);
-    if (!reporter || !category) return "";
+    const reporter = getReporter(story.reporter) || { name: story.reporter, avatar: "?", avatarColor: "#555" };
+    const category = getCategory(story.category) || { label: story.category, color: "#555" };
 
     const isFeatured = size === "featured";
     const cardClass = isFeatured ? "story-card featured" : "story-card";
@@ -139,9 +139,8 @@
     const story = STORIES.find((s) => s.id === storyId);
     if (!story) return;
 
-    const reporter = getReporter(story.reporter);
-    const category = getCategory(story.category);
-    if (!reporter || !category) return;
+    const reporter = getReporter(story.reporter) || { name: story.reporter, avatar: "?", avatarColor: "#555", bio: "", title: "", articles: "" };
+    const category = getCategory(story.category) || { label: story.category, color: "#555" };
 
     const article = document.getElementById("modal-article");
     if (!article) return;

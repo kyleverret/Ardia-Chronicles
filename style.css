@@ -1452,8 +1452,8 @@ a:hover {
 /* ---- FACTION REACTIONS ---- */
 
 .faction-reactions {
-  margin: 28px 0 8px;
-  padding: 18px 0 4px;
+  margin: 36px 0 16px;
+  padding: 22px 0 8px;
   border-top: 1px solid var(--paper-dark);
 }
 
@@ -1464,26 +1464,26 @@ a:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold-dark);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .faction-reactions-btns {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 
 .faction-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  gap: 8px;
+  padding: 8px 18px;
   background: var(--paper-mid);
   border: 1px solid var(--paper-dark);
   border-radius: 20px;
   cursor: pointer;
   font-family: var(--font-serif);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--ink);
   transition: background 0.15s, border-color 0.15s, transform 0.1s;
   white-space: nowrap;
@@ -1507,23 +1507,30 @@ a:hover {
 }
 
 .faction-emoji {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1;
 }
 
 .faction-name {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .faction-count {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: bold;
+  padding-left: 4px;
+  border-left: 1px solid var(--paper-dark);
   min-width: 1ch;
   color: var(--gold-dark);
 }
 
 .faction-btn.active .faction-count {
   color: var(--gold-light);
+  border-left-color: var(--gold-dark);
+}
+
+.faction-count:empty {
+  display: none;
 }
 
 @media (max-width: 500px) {

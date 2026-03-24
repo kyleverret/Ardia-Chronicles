@@ -4,7 +4,7 @@
 //   - In-season banner
 //   - Recent scores & results
 //   - League standings
-//   - Monthly Athlete of the Month hero card
+//   - Monthly Chronicle Sports Spotlight hero card
 //   - Sports news stories (from STORIES in data.js)
 //   - Sports staff cards (expanded profiles)
 //   - Tournament calendar sidebar

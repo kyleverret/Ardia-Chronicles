@@ -156,6 +156,21 @@ const REPORTERS = [
     species: "Pixie",
     active: true,
   },
+  {
+    id: "oakimus-pan",
+    name: "Oakimus Pan",
+    title: "Junior Sports Correspondent",
+    bio: "Oakimus Pan is the Chronicle's newest and youngest staff member — a satyr from the Verdant Expanse who arrived in Praxis with a campus broadsheet clipping, a reed pipe, and more opinions about Mageball than most coaches. Hired on the recommendation of Gareth Ironwood, he covers junior leagues, regional tournaments, player profiles, and sideline color. His writing is funny, warm, and surprisingly sharp. He plays his reed pipe when he's nervous. He is nervous a lot.",
+    personality: "Irrepressibly enthusiastic, quick with a pun, and genuinely delighted by sport in all its forms. He has a satyr's instinct for authenticity — he can spot a coasting athlete from the press box. He's learning fast and not afraid to say what he doesn't know yet.",
+    writingStyle: "Energetic and conversational with a comic sensibility that earned him a devoted campus readership before he was twenty. Warm character sketches, unexpected angles, and a weakness for sports puns he is largely unrepentant about. Occasionally brilliant when he slows down and focuses.",
+    avatar: "OP",
+    avatarColor: "#5a9e3a",
+    beat: "Sports & Tournaments (Junior)",
+    image: "images/reporters/oakimus-pan.png",
+    articles: 0,
+    species: "Satyr",
+    active: true,
+  },
 ];
 
 const CATEGORIES = [

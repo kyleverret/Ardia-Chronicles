@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Sports Desk — The Ardia Chronicle</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Sports Page Overrides & Extensions ── */
+
+    .sports-page-header {
+      text-align: center;
+      padding: 2rem 1.5rem 1.5rem;
+      border-bottom: 3px double var(--ink);
+      background: var(--aged-paper);
+    }
+
+    .sports-page-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0.5rem 0 0.25rem;
+      color: var(--ink);
+    }
+
+    .sports-page-subtitle {
+      font-family: var(--font-body);
+      font-style: italic;
+      color: var(--ink-light);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* ── In-Season Banner ── */
+    .in-season-bar {
+      background: #ffaa00;
+      color: #1a1008;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 2px solid #c87800;
+    }
+
+    .in-season-label {
+      white-space: nowrap;
+      opacity: 0.7;
+    }
+
+    .in-season-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .season-chip {
+      background: rgba(0,0,0,0.15);
+      border-radius: 3px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    /* ── Page Layout ── */
+    .sports-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    .sports-two-col {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .sports-two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ── Section Headers ── */
+    .sports-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .sports-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.4rem;
+    }
+
+    .sports-section-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .sports-section-badge {
+      background: #ffaa00;
+      color: #1a1008;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+    }
+
+    /* ── Scores Grid ── */
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .score-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-top: 3px solid #ffaa00;
+      padding: 0.85rem 1rem;
+      border-radius: 2px;
+    }
+
+    .score-card-sport {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ink-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .score-card-match {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .score-team {
+      flex: 1;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .score-team.winner { font-weight: 700; }
+
+    .score-team.right { text-align: right; }
+
+    .score-numbers {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .score-sep { color: var(--ink-light); font-size: 1rem; }
+
+    .score-card-meta {
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .score-card-note {
+      font-size: 0.75rem;
+      color: #cc4400;
+      margin-top: 0.25rem;
+      font-weight: 600;
+    }
+
+    /* ── Standings Table ── */
+    .standings-block {
+      margin-bottom: 1.75rem;
+    }
+
+    .standings-sport-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 0.5rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .standings-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      font-size: 0.83rem;
+    }
+
+    .standings-table th {
+      text-align: left;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-light);
+      padding: 0.3rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--aged-paper);
+    }
+
+    .standings-table th.num { text-align: center; }
+
+    .standings-table td {
+      padding: 0.35rem 0.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      color: var(--ink);
+    }
+
+    .standings-table td.num { text-align: center; }
+
+    .standings-table tr.top-team td { font-weight: 700; }
+
+    .standings-pos {
+      font-weight: 700;
+      color: var(--ink-light);
+      font-size: 0.78rem;
+      width: 1.5rem;
+    }
+
+    .standings-note {
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Sports News ── */
+    .sports-news-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    /* ── Star Players ── */
+    .stars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .star-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 2px;
+      border-left: 4px solid #ffaa00;
+    }
+
+    .star-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.15rem;
+      color: var(--ink);
+    }
+
+    .star-sport {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #ffaa00;
+      margin-bottom: 0.4rem;
+    }
+
+    .star-team {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    .star-desc {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    /* ── Staff Cards ── */
+    .sports-staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .sports-staff-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      border-radius: 2px;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .sports-staff-portrait {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid #ffaa00;
+    }
+
+    .sports-staff-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid #ffaa00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .sports-staff-info { flex: 1; }
+
+    .sports-staff-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.15rem;
+      color: var(--ink);
+    }
+
+    .sports-staff-title {
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .sports-staff-bio {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    /* ── Sidebar ── */
+    .sports-sidebar-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sports-sidebar-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--ink);
+      color: var(--ink);
+    }
+
+    .tournament-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .tournament-item:last-child { border-bottom: none; }
+
+    .tournament-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .tournament-detail {
+      font-size: 0.75rem;
+      color: var(--ink-light);
+    }
+
+    .tournament-status {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.1rem;
+    }
+
+    .status-active { color: #228822; }
+    .status-upcoming { color: #0055aa; }
+    .status-suspended { color: #cc2200; }
+    .status-offseason { color: var(--ink-light); }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date" id="current-date"></div>
+      <div class="masthead-edition">Morning Edition · Year 847 AP</div>
+    </div>
+    <div class="masthead-title">
+      <div class="masthead-ornament">✦ ✦ ✦</div>
+      <h1 class="paper-name">The Ardia Chronicle</h1>
+      <p class="paper-tagline"><em>"Truth Binds Stronger Than Magic"</em></p>
+      <div class="masthead-ornament">✦ ✦ ✦</div>
+    </div>
+    <nav class="masthead-nav">
+      <a href="index.html" class="nav-link">&larr; Back to News</a>
+      <a href="index.html#politics" class="nav-link">Politics</a>
+      <a href="index.html#conflict" class="nav-link">Conflict</a>
+      <a href="index.html#culture" class="nav-link">Culture</a>
+      <a href="index.html#science" class="nav-link">Science &amp; Magic</a>
+      <a href="sports.html" class="nav-link active">Sports</a>
+      <a href="index.html#crime" class="nav-link">Crime</a>
+      <a href="reporters.html" class="nav-link">Our Reporters</a>
+      <a href="archive.html" class="nav-link">Archives</a>
+    </nav>
+  </header>
+
+  <!-- IN-SEASON BAR -->
+  <div class="in-season-bar" id="in-season-bar">
+    <span class="in-season-label">In Season:</span>
+    <div class="in-season-chips" id="in-season-chips">
+      <!-- Populated by sports-page.js -->
+    </div>
+  </div>
+
+  <!-- SPORTS PAGE HEADER -->
+  <div class="sports-page-header">
+    <div class="masthead-ornament">✦ ✦ ✦</div>
+    <h2 class="sports-page-title">The Sports Desk</h2>
+    <p class="sports-page-subtitle">
+      Scores, standings, tournaments, and dispatches from every arena in the realm
+    </p>
+    <div class="masthead-ornament">✦ ✦ ✦</div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="sports-main">
+    <div class="sports-two-col">
+
+      <!-- LEFT COLUMN -->
+      <div class="sports-left">
+
+        <!-- RECENT SCORES -->
+        <section class="sports-section" id="scores-section">
+          <div class="sports-section-header">
+            <h2 class="sports-section-title">Recent Results</h2>
+            <span class="sports-section-badge">Latest</span>
+          </div>
+          <div class="scores-grid" id="scores-grid">
+            <!-- Populated by sports-page.js -->
+          </div>
+        </section>
+
+        <!-- STANDINGS -->
+        <section class="sports-section" id="standings-section">
+          <div class="sports-section-header">
+            <h2 class="sports-section-title">Current Standings</h2>
+          </div>
+          <div id="standings-container">
+            <!-- Populated by sports-page.js -->
+          </div>
+        </section>
+
+        <!-- SPORTS NEWS -->
+        <section class="sports-section" id="sports-news-section">
+          <div class="sports-section-header">
+            <h2 class="sports-section-title">Sports News</h2>
+            <span class="sports-section-badge" id="sports-story-count"></span>
+          </div>
+          <div class="sports-news-grid" id="sports-news-grid">
+            <!-- Populated by sports-page.js -->
+          </div>
+        </section>
+
+        <!-- STAR PLAYERS -->
+        <section class="sports-section" id="star-players-section">
+          <div class="sports-section-header">
+            <h2 class="sports-section-title">Star Athletes</h2>
+          </div>
+          <div class="stars-grid" id="stars-grid">
+            <!-- Populated by sports-page.js -->
+          </div>
+        </section>
+
+        <!-- SPORTS STAFF -->
+        <section class="sports-section" id="sports-staff-section">
+          <div class="sports-section-header">
+            <h2 class="sports-section-title">The Sports Desk</h2>
+          </div>
+          <div class="sports-staff-grid" id="sports-staff-grid">
+            <!-- Populated by sports-page.js -->
+          </div>
+        </section>
+
+      </div><!-- end sports-left -->
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="sports-sidebar">
+
+        <!-- TOURNAMENT CALENDAR -->
+        <div class="sports-sidebar-section">
+          <h3 class="sports-sidebar-title">Tournament Calendar</h3>
+          <div id="tournament-calendar">
+            <!-- Populated by sports-page.js -->
+          </div>
+        </div>
+
+        <!-- INDIVIDUAL SPORTS STARS -->
+        <div class="sports-sidebar-section">
+          <h3 class="sports-sidebar-title">Individual Sports Champions</h3>
+          <div id="individual-stars">
+            <!-- Populated by sports-page.js -->
+          </div>
+        </div>
+
+      </aside>
+
+    </div><!-- end sports-two-col -->
+  </div><!-- end sports-main -->
+
+  <!-- STORY MODAL (reuses main site modal styles) -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close story">&#x2715;</button>
+      <article class="modal-article" id="modal-content">
+        <!-- Populated by sports-page.js -->
+      </article>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-name">The Ardia Chronicle</p>
+      <p class="footer-tagline"><em>"Truth Binds Stronger Than Magic"</em></p>
+      <div class="footer-links">
+        <a href="index.html">News</a>
+        <a href="reporters.html">Our Reporters</a>
+        <a href="sports.html">Sports</a>
+        <a href="archive.html">Archives</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <p class="footer-copyright">&copy; Year 847 AP · The Ardia Chronicle · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="sports-page.js"></script>
+</body>
+</html>

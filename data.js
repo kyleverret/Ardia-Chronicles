@@ -288,7 +288,7 @@ const EDITORIAL_BOARD = [
 const STORIES = [
   {
     "id": "sports-20260324000000",
-    "headline": "Weclome to the Chronicle Oakimus Pan",
+    "headline": "Weclome to the Chronicle, Oakimus Pan",
     "subheadline": "The True G.O.A.T in Ardia Sports",
     "reporter": "gareth-ironwood",
     "category": "sports",

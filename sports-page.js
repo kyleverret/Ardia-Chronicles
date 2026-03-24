@@ -692,14 +692,12 @@
           <div class="staff-card-header">
             ${portraitHtml}
             <div style="flex:1">
-              <div class="staff-card-species">${escapeHtml(r.species || "")}</div>
               <div class="sports-staff-name">${escapeHtml(r.name)}</div>
               <div class="sports-staff-title">${escapeHtml(r.title)}</div>
               ${articlesNote}
             </div>
           </div>
           <p class="sports-staff-bio">${escapeHtml(r.bio)}</p>
-          ${r.personality ? `<p class="staff-card-personality">${escapeHtml(r.personality)}</p>` : ""}
         </div>`;
     }).join("");
   }

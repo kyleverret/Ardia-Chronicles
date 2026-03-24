@@ -4,11 +4,10 @@
 //   - In-season banner
 //   - Recent scores & results
 //   - League standings
+//   - Monthly Athlete of the Month hero card
 //   - Sports news stories (from STORIES in data.js)
-//   - Star athletes
-//   - Sports staff cards
+//   - Sports staff cards (expanded profiles)
 //   - Tournament calendar sidebar
-//   - Individual sports champions sidebar
 //   - Story modal
 // ============================================================
 
@@ -269,7 +268,8 @@
     },
   ];
 
-  // ── Individual Sports Champions (sidebar) ───────────────────
+  // ── Individual Sports Champions (kept for writing context only) ─
+  // Not rendered on page; used as reference by generate-content.js
 
   const INDIVIDUAL_CHAMPIONS = [
     { name: "Magister Solvaine Dex", sport: "Grand Mage Duels", detail: "4× Champion" },
@@ -278,6 +278,182 @@
     { name: "Master Celan Dawnblade",sport: "Runeblade Fencing",detail: "7× Grand Circuit Champion" },
     { name: "Ilex Skydancer",        sport: "Free-Flying",      detail: "3× Grand Final Champion" },
     { name: "Coran Dustweave",       sport: "Dragonrider Racing",detail: "Record 47 career race wins" },
+  ];
+
+  // ── Monthly Athlete of the Month ─────────────────────────────
+  // One entry per real-calendar month (index 0 = January).
+  // Each entry highlights an athlete whose sport is in-season or
+  // who has a notable off-season storyline for that month.
+
+  const MONTHLY_HEROES = [
+    // 0 Jan — Frosthold: Crystal Shields season
+    {
+      name: "Holt Frostcleave",
+      sport: "Crystal Shields",
+      team: "Praxis Frostthorn",
+      species: "Half-Orc",
+      initials: "HF",
+      stats: [
+        { value: "14", label: "Power Surge Goals" },
+        { value: "3rd", label: "Season Overall" },
+        { value: "6", label: "Seasons Played" },
+      ],
+      desc: "The most physical player in the Crystal Shields league, Holt Frostcleave brings a battering-ram intensity that the Frostthorn faithful love. His Power Surge goal count leads the league every season, even when his Penalty Enclosure time threatens to undermine it. This Frosthold he is chasing a personal record — and the Praxis crowd has shown up in record numbers to watch him try.",
+    },
+    // 1 Feb — Iceveil: Crystal Shields Finals
+    {
+      name: "Lira Snowveil",
+      sport: "Crystal Shields",
+      team: "Iceveil Glaciers",
+      species: "Elf",
+      initials: "LS",
+      stats: [
+        { value: "1st", label: "Speed Rankings" },
+        { value: "22", label: "Scoring Assists" },
+        { value: "4th", label: "Finals Appearance" },
+      ],
+      desc: "Lira Snowveil is the fastest skater the Crystal Shields league has ever recorded, and in Iceveil she is chasing her first championship. Where Holt Frostcleave wins through force, Snowveil wins through angles — finding passing lanes that simply do not exist until she opens them. Her fourth Finals appearance is, her coaches say quietly, her best chance yet.",
+    },
+    // 2 Mar — Thawbreak: Mageball season opens
+    {
+      name: "Torren Quickflame",
+      sport: "Mageball",
+      team: "Praxis Stormcrest",
+      species: "Human",
+      initials: "TQ",
+      stats: [
+        { value: "34", label: "Goals Last Season" },
+        { value: "12", label: "Surge Ball Goals" },
+        { value: "9", label: "AML Seasons" },
+      ],
+      desc: "When the Mageball season opens in Thawbreak, all eyes turn to Torren Quickflame. The Stormcrest striker led the league last season with 34 goals and shows no sign of slowing. What makes him exceptional is not raw speed but instinct — he finds the Surge Ball before anyone else has spotted it, and finishes with a clinical calm that younger players study obsessively.",
+    },
+    // 3 Apr — Bloomrise: Dragonrider Racing opens
+    {
+      name: "Talissa Firebright",
+      sport: "Dragonrider Racing",
+      team: "Ashfield Blazers",
+      species: "Half-Elf",
+      initials: "TF",
+      stats: [
+        { value: "#1", label: "Fastest Pre-Season Trial" },
+        { value: "1st", label: "Full Season Debut" },
+        { value: "4", label: "Top-3 Trial Finishes" },
+      ],
+      desc: "Nobody in the history of the Dragonrider League has posted faster pre-season trial times than Talissa Firebright in her debut year. The half-elf rookie from Ashfield has speed in abundance — what she is building this season is race-craft. Her opening Bloomrise performance will tell the realm whether she can match her raw talent with the composure the sky-course demands.",
+    },
+    // 4 May — Brightmantle: Mageball Cup Final month
+    {
+      name: "Zenna Brightleaf",
+      sport: "Mageball",
+      team: "Valdris Tidebreakers",
+      species: "Elf",
+      initials: "ZB",
+      stats: [
+        { value: "7", label: "Season Shutouts (Record)" },
+        { value: "0", label: "Open-Play Goals Conceded" },
+        { value: "3", label: "Cup Final Appearances" },
+      ],
+      desc: "The best goalkeeper in the Ardian Mageball League does not need loud celebration — her record speaks. Seven shutouts in a single season is a standard no other keeper has approached. As the Mageball Cup Final approaches in Brightmantle, the question is not whether Zenna Brightleaf will have a great game, but whether the rest of her team can score enough to make her saves matter.",
+    },
+    // 5 Jun — Highsun: Griffin Polo opens, Archery Grand Final
+    {
+      name: "Sylara Windwhisper",
+      sport: "Griffin Polo",
+      team: "Verdant Wind",
+      species: "Elf",
+      initials: "SW",
+      stats: [
+        { value: "7", label: "Grand Championship Medals" },
+        { value: "43", label: "Career High-Hoop Goals" },
+        { value: "21", label: "Circuit Seasons" },
+      ],
+      desc: "Seven Grand Championship medals across a career that has outlasted entire rival teams. Sylara Windwhisper is the most decorated polo player in living memory, and her bond with her griffin Dawnmere has been described by commentators as less rider-and-mount, more two-minds-in-one. Highsun is her season, and she has never failed to make it count.",
+    },
+    // 6 Jul — Embertide: Dragonrider Championship, Alch. Athletics Championship
+    {
+      name: "Brynn Shadowmane",
+      sport: "Dragonrider Racing",
+      team: "Team Emberveil",
+      species: "Elf",
+      initials: "BS",
+      stats: [
+        { value: "846 AP", label: "Championship Year" },
+        { value: "28", label: "Crystal Gate Bonuses" },
+        { value: "5", label: "Consecutive Podiums" },
+      ],
+      desc: "Defending Dragonrider Champion Brynn Shadowmane is the embodiment of controlled precision in a sport where riders who push too hard end up in freefall. Her record for Crystal Gate bonuses in a single season reflects a style of racing built on accuracy over bravado. As Embertide's Championship Final approaches — when it is eventually rescheduled — Emberveil's title defence rests on her shoulders.",
+    },
+    // 7 Aug — Harvestmoon: Jousting Circuit opens, Free-Flying opens
+    {
+      name: "Brennan Swiftlance",
+      sport: "Jousting",
+      team: "Ashfield Lancers",
+      species: "Human",
+      initials: "BS",
+      stats: [
+        { value: "Ashfield", label: "Home Ground Record" },
+        { value: "3", label: "Circuit Seasons" },
+        { value: "12.4", label: "Avg Bout Score" },
+      ],
+      desc: "Brennan Swiftlance is the Ashfield crowd's favourite — a hometown jouster who turns the Tiltyard into a wall of noise whenever he enters the lists. His form at home is exceptional; away from Ashfield, the nerves show. This Harvestmoon he has reportedly worked with a mental conditioning coach over the off-season. The Ashfield faithful are cautiously optimistic. Everyone else is watching.",
+    },
+    // 8 Sep — Goldenveil: Griffin Polo Grand Championship Final
+    {
+      name: "Dame Rowena Ironfist",
+      sport: "Jousting",
+      team: "Ironkeep Iron Guard",
+      species: "Human",
+      initials: "RI",
+      stats: [
+        { value: "845 AP", label: "Ashfield Cup Winner" },
+        { value: "1st", label: "Woman to Win the Cup" },
+        { value: "8", label: "Circuit Seasons" },
+      ],
+      desc: "Dame Rowena Ironfist won the Ashfield Cup in 845 AP as the first woman in the tournament's history to do so, and she won it in a way that silenced every doubter: three knockdowns in four bouts, the highest Power Score of the tournament, and a final against Sir Aldric Stonebrow that is still debated in every tavern along the road to Ironkeep. She is the current favourite for the 847 AP Cup.",
+    },
+    // 9 Oct — Shadowfall: Grand Mage Duels Autumn, Free-Flying Final
+    {
+      name: "Pyxis Ashbloom",
+      sport: "Grand Mage Duels",
+      team: "Independent",
+      species: "Half-Elf",
+      initials: "PA",
+      stats: [
+        { value: "Arcane", label: "Tier Last Season" },
+        { value: "Grand Arcane", label: "Tier This Season" },
+        { value: "3", label: "Consecutive Wins" },
+      ],
+      desc: "Pyxis Ashbloom won the Arcane-tier championship so convincingly that the judges promoted her directly to Grand Arcane seeding — a jump that happens perhaps once in a decade. Her style is everything Magister Solvaine Dex is not: theatrical, unpredictable, and driven by a flair for Creativity scoring that the crowd rewards with thunderous response. The Autumn Tournament in Shadowfall is her first test at the highest tier.",
+    },
+    // 10 Nov — Ashgale: off-season, veteran features
+    {
+      name: "Coran Dustweave",
+      sport: "Dragonrider Racing",
+      team: "Ironkeep Ironwings",
+      species: "Dwarf",
+      initials: "CD",
+      stats: [
+        { value: "47", label: "Career Race Wins (Record)" },
+        { value: "14", label: "League Seasons" },
+        { value: "2", label: "Seasons Until Retirement" },
+      ],
+      desc: "Fourteen seasons. Forty-seven race wins. No other rider in Dragonrider League history has won more. Coran Dustweave is nearing the end of a career that redefined what a dwarf could achieve in a sport dominated by elves and humans, and the off-season in Ashgale always brings renewed speculation: will this be his final year? He has not said. He never says. He just keeps winning.",
+    },
+    // 11 Dec — Starnight: Runeblade Grand Circuit Final
+    {
+      name: "Master Celan Dawnblade",
+      sport: "Runeblade Fencing",
+      team: "Independent",
+      species: "Elf",
+      initials: "CD",
+      stats: [
+        { value: "7×", label: "Grand Circuit Champion" },
+        { value: "0", label: "Grand Circuit Finals Lost" },
+        { value: "34", label: "Years of Competition" },
+      ],
+      desc: "Seven Grand Circuit titles. An unbroken record in Finals. A career stretching across thirty-four years of competition. Master Celan Dawnblade is the greatest Runeblade fencer Ardia has ever produced, and Starnight's Grand Circuit Final is the one event where the whole realm pays attention to a sport it otherwise treats as background decoration. He has never lost a Final. He does not plan to start.",
+    },
   ];
 
   // ── Helpers ──────────────────────────────────────────────────
@@ -458,21 +634,42 @@
     });
   }
 
-  // ── Star Athletes ────────────────────────────────────────────
+  // ── Monthly Hero ─────────────────────────────────────────────
 
-  function renderStars() {
-    const grid = document.getElementById("stars-grid");
-    if (!grid) return;
-    grid.innerHTML = STAR_ATHLETES.map((a) => `
-      <div class="star-card">
-        <div class="star-name">${escapeHtml(a.name)}</div>
-        <div class="star-sport">${escapeHtml(a.sport)}</div>
-        <div class="star-team">${escapeHtml(a.team)}</div>
-        <p class="star-desc">${escapeHtml(a.desc)}</p>
+  function renderMonthlyHero() {
+    const card = document.getElementById("monthly-hero-card");
+    const label = document.getElementById("hero-month-label");
+    if (!card) return;
+
+    const hero = MONTHLY_HEROES[currentRealMonth];
+    if (!hero) return;
+
+    if (label) label.textContent = currentArdiaMonth;
+
+    const portraitHtml = hero.image
+      ? `<img src="${escapeHtml(hero.image)}" alt="${escapeHtml(hero.name)}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)" />`
+      : `<div class="hero-card-portrait-placeholder">${escapeHtml(hero.initials)}</div>`;
+
+    const statsHtml = (hero.stats || []).map((s) => `
+      <div class="hero-stat">
+        <span class="hero-stat-value">${escapeHtml(s.value)}</span>
+        <span class="hero-stat-label">${escapeHtml(s.label)}</span>
       </div>`).join("");
+
+    card.innerHTML = `
+      <div class="hero-card">
+        <div class="hero-card-portrait">${portraitHtml}</div>
+        <div class="hero-card-body">
+          <div class="hero-card-sport">${escapeHtml(hero.sport)}</div>
+          <h3 class="hero-card-name">${escapeHtml(hero.name)}</h3>
+          <div class="hero-card-team">${escapeHtml(hero.team)} &middot; ${escapeHtml(hero.species)}</div>
+          <p class="hero-card-desc">${escapeHtml(hero.desc)}</p>
+          ${statsHtml ? `<div class="hero-card-stat-row">${statsHtml}</div>` : ""}
+        </div>
+      </div>`;
   }
 
-  // ── Sports Staff ─────────────────────────────────────────────
+  // ── Sports Staff (expanded) ───────────────────────────────────
 
   function renderSportsStaff() {
     const grid = document.getElementById("sports-staff-grid");
@@ -483,16 +680,26 @@
 
     grid.innerHTML = staff.map((r) => {
       const portraitHtml = r.image
-        ? `<img class="sports-staff-portrait" src="${escapeHtml(r.image)}" alt="${escapeHtml(r.name)}" />`
-        : `<div class="sports-staff-avatar" style="background-color:${escapeHtml(r.avatarColor)}">${escapeHtml(r.avatar)}</div>`;
+        ? `<img class="sports-staff-portrait" src="${escapeHtml(r.image)}" alt="${escapeHtml(r.name)}" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0" />`
+        : `<div class="sports-staff-avatar" style="background-color:${escapeHtml(r.avatarColor)};width:72px;height:72px;border-radius:50%;flex-shrink:0;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white">${escapeHtml(r.avatar)}</div>`;
+
+      const articlesNote = r.articles > 0
+        ? `<div class="staff-card-articles">${r.articles} stories published</div>`
+        : `<div class="staff-card-articles">Joined ${currentArdiaMonth} 847 AP</div>`;
+
       return `
-        <div class="sports-staff-card">
-          ${portraitHtml}
-          <div class="sports-staff-info">
-            <div class="sports-staff-name">${escapeHtml(r.name)}</div>
-            <div class="sports-staff-title">${escapeHtml(r.title)}</div>
-            <p class="sports-staff-bio">${escapeHtml(r.bio)}</p>
+        <div class="sports-staff-card-expanded">
+          <div class="staff-card-header">
+            ${portraitHtml}
+            <div style="flex:1">
+              <div class="staff-card-species">${escapeHtml(r.species || "")}</div>
+              <div class="sports-staff-name">${escapeHtml(r.name)}</div>
+              <div class="sports-staff-title">${escapeHtml(r.title)}</div>
+              ${articlesNote}
+            </div>
           </div>
+          <p class="sports-staff-bio">${escapeHtml(r.bio)}</p>
+          ${r.personality ? `<p class="staff-card-personality">${escapeHtml(r.personality)}</p>` : ""}
         </div>`;
     }).join("");
   }
@@ -511,19 +718,6 @@
           <span class="tournament-status ${statusClass}">${escapeHtml(t.statusLabel)}</span>
         </div>`;
     }).join("");
-  }
-
-  // ── Individual Champions (sidebar) ───────────────────────────
-
-  function renderIndividualChampions() {
-    const container = document.getElementById("individual-stars");
-    if (!container) return;
-    container.innerHTML = INDIVIDUAL_CHAMPIONS.map((c) => `
-      <div class="tournament-item">
-        <span class="tournament-name">${escapeHtml(c.name)}</span>
-        <span class="tournament-detail" style="font-style:italic">${escapeHtml(c.sport)}</span>
-        <span class="tournament-detail">${escapeHtml(c.detail)}</span>
-      </div>`).join("");
   }
 
   // ── Story Modal ──────────────────────────────────────────────
@@ -587,11 +781,10 @@
     renderInSeasonBar();
     renderScores();
     renderStandings();
+    renderMonthlyHero();
     renderSportsNews();
-    renderStars();
     renderSportsStaff();
     renderTournamentCalendar();
-    renderIndividualChampions();
     bindModal();
   }
 

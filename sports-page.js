@@ -322,6 +322,7 @@
       team: "Praxis Stormcrest",
       species: "Human",
       initials: "TQ",
+      image: "images/sports-figures/torren-quickflame.png",
       stats: [
         { value: "34", label: "Goals Last Season" },
         { value: "12", label: "Surge Ball Goals" },

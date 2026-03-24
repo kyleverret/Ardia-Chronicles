@@ -170,6 +170,7 @@
       sport: "Mageball",
       team: "Praxis Stormcrest",
       desc: "League's top scorer last season with 34 goals. Known for an almost supernatural instinct for the Surge Ball. Currently on course to beat his own record.",
+      image: "images/sports-figures/torren-quickflame.png"
     },
     {
       name: "Zenna Brightleaf",
@@ -327,6 +328,8 @@
         { value: "9", label: "AML Seasons" },
       ],
       desc: "When the Mageball season opens in Thawbreak, all eyes turn to Torren Quickflame. The Stormcrest striker led the league last season with 34 goals and shows no sign of slowing. What makes him exceptional is not raw speed but instinct — he finds the Surge Ball before anyone else has spotted it, and finishes with a clinical calm that younger players study obsessively.",
+      image: "images/sports-figures/torren-quickflame.png",
+
     },
     // 3 Apr — Bloomrise: Dragonrider Racing opens
     {
